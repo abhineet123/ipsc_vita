@@ -16,7 +16,8 @@
         - [4.5.4.60       @ opencv/install](#4_5_4_60___opencv_install_)
     - [requirements       @ install](#requirements___instal_l_)
     - [cuda_operators       @ install](#cuda_operators___instal_l_)
-        - [cc       @ cuda_operators/install](#cc___cuda_operators_install_)
+    - [cc       @ install](#cc___instal_l_)
+        - [cc       @ cc/install](#cc___cc_install_)
 - [bugs](#bug_s_)
     - [windows       @ bugs](#windows___bugs_)
 - [new_dataset](#new_dataset_)
@@ -136,11 +137,16 @@ python -m pip install -r requirements.txt
 <a id="cuda_operators___instal_l_"></a>
 ## cuda_operators       @ install-->vita_setup
 cd mask2former/modeling/pixel_decoder/ops
-python setup.py build install FORCE_CUDA=1
+python setup.py build install
 cd -
 
-<a id="cc___cuda_operators_install_"></a>
-### cc       @ cuda_operators/install-->vita_setup
+<a id="cc___instal_l_"></a>
+## cc       @ install-->vita_setup
+salloc --nodes=1 --time=0:05:0 --account=def-nilanjan --gpus-per-node=1 --mem=4000M --cpus-per-task=1
+
+
+<a id="cc___cc_install_"></a>
+### cc       @ cc/install-->vita_setup
 salloc --nodes=1 --time=0:15:0 --account=def-nilanjan --gpus-per-node=1 --mem=4000M --cpus-per-task=4
 
 module load cuda cudnn gcc python/3.8
