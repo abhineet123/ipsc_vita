@@ -7,8 +7,13 @@ from .ovis import _get_ovis_instances_meta
 from vita.data.datasets.ytvis import (
     register_ytvis_instances,
     _get_ytvis_2019_instances_meta,
-    _get_ytvis_2021_instances_meta
+    _get_ytvis_2021_instances_meta,
+    _get_ytvis_2019_ipsc_instances_meta,
+    _get_ytvis_2019_mj_rocks_instances_meta,
 )
+
+
+# ==== Predefined splits for YTVIS 2019 ===========
 
 # ==== Predefined splits for YTVIS 2019 ===========
 _PREDEFINED_SPLITS_YTVIS_2019 = {
@@ -20,6 +25,51 @@ _PREDEFINED_SPLITS_YTVIS_2019 = {
                         "ytvis_2019/test.json"),
     "ytvis_2019_val_all_frames": ("ytvis_2019/valid_all_frames/JPEGImages",
                         "ytvis_2019/valid_all_frames.json"),
+
+    "ytvis-mj_rock-db3-part12-train": (
+        "mojow_rock/rock_dataset3/ytvis19/JPEGImages",
+        "mojow_rock/rock_dataset3/ytvis19/mj_rock-db3-part12-train.json"
+    ),
+    "ytvis-mj_rock-db3-part12-val": (
+        "mojow_rock/rock_dataset3/ytvis19/JPEGImages",
+        "mojow_rock/rock_dataset3/ytvis19/mj_rock-db3-part12-val.json"
+    ),
+
+    "ytvis-mj_rock-db3_2_to_17_except_6_with_syn-train": (
+        "mojow_rock/rock_dataset3/ytvis19/JPEGImages",
+        "mojow_rock/rock_dataset3/ytvis19/mj_rock-db3_2_to_17_except_6_with_syn-train.json"
+    ),
+    "ytvis-mj_rock-db3_2_to_17_except_6_with_syn-val": (
+        "mojow_rock/rock_dataset3/ytvis19/JPEGImages",
+        "mojow_rock/rock_dataset3/ytvis19/mj_rock-db3_2_to_17_except_6_with_syn-val.json"
+    ),
+
+    "ytvis-mj_rock-db3_2_to_17_except_6-train": (
+        "mojow_rock/rock_dataset3/ytvis19/JPEGImages",
+        "mojow_rock/rock_dataset3/ytvis19/mj_rock-db3_2_to_17_except_6-train.json"
+    ),
+    "ytvis-mj_rock-db3_2_to_17_except_6-val": (
+        "mojow_rock/rock_dataset3/ytvis19/JPEGImages",
+        "mojow_rock/rock_dataset3/ytvis19/mj_rock-db3_2_to_17_except_6-val.json"
+    ),
+
+    "ytvis-ipsc-all_frames_roi_g2_0_38-train": (
+        "ipsc/well3/all_frames_roi/ytvis19/JPEGImages",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-all_frames_roi_g2_0_38-train.json"
+    ),
+    "ytvis-ipsc-all_frames_roi_g2_0_38-val": (
+        "ipsc/well3/all_frames_roi/ytvis19/JPEGImages",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-all_frames_roi_g2_0_38-val.json"
+    ),
+    "ytvis-ipsc-all_frames_roi_g2_39_53-test": (
+        "ipsc/well3/all_frames_roi/ytvis19/JPEGImages",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-all_frames_roi_g2_39_53-test.json"
+    ),
+
+}
+
+_PREDEFINED_SPLITS_YTVIS_2019 = {
+
 }
 
 

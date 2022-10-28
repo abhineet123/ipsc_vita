@@ -19,6 +19,7 @@ _ext
 *.so
 *.dll
 *.egg-info/
+detectron2/
 pretrained/
 build/
 dist/
