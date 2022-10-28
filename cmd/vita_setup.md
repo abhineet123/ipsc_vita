@@ -17,7 +17,6 @@
     - [requirements       @ install](#requirements___instal_l_)
     - [cuda_operators       @ install](#cuda_operators___instal_l_)
     - [cc       @ install](#cc___instal_l_)
-        - [cc       @ cc/install](#cc___cc_install_)
 - [bugs](#bug_s_)
     - [windows       @ bugs](#windows___bugs_)
 - [new_dataset](#new_dataset_)
@@ -72,6 +71,10 @@ deactivate
 alias vita='source vita/bin/activate'
 
 diskusage_report
+
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/pretrained/vita_swin_coco.pth ./
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/vita_swin_ytvis2019.pth ./
+
 
 <a id="cuda_version___virtualenv_"></a>
 ## cuda_version       @ virtualenv-->vita_setup
@@ -143,16 +146,9 @@ cd -
 <a id="cc___instal_l_"></a>
 ## cc       @ install-->vita_setup
 salloc --nodes=1 --time=0:05:0 --account=def-nilanjan --gpus-per-node=1 --mem=4000M --cpus-per-task=1
-
-
-<a id="cc___cc_install_"></a>
-### cc       @ cc/install-->vita_setup
-salloc --nodes=1 --time=0:15:0 --account=def-nilanjan --gpus-per-node=1 --mem=4000M --cpus-per-task=4
-
 module load cuda cudnn gcc python/3.8
-source ~/vnext/bin/activate
-
-cp -r projects/IDOL/idol/models/ops ~/
+source ~/vita/bin/activate
+cp -r mask2former/modeling/pixel_decoder/ops ~/
 cd ~/ops/
 python3 setup.py build install
 
@@ -172,6 +168,9 @@ change `backend="NCCL"` to `backend="GLOO"` in
 "C:\UofA\PhD\ipsc_cell_tracking\ipsc_vnext\projects\SeqFormer\seqformer\data\datasets\builtin.py"
 `_PREDEFINED_SPLITS_YTVIS_2019`
 `register_all_ytvis_2019`
+
+
+
 
 
 

@@ -26,6 +26,8 @@ python train_net_vita.py --num-gpus 1 --config-file configs/youtubevis_2019/ipsc
 
 <a id="cc___ytvis2019_swin_ipsc_all_frames_roi_g2_0_38_"></a>
 #### cc       @ ytvis2019/swin/ipsc-all_frames_roi_g2_0_38-->vita
+sbatch cmd/vita-ipsc-all_frames_roi_g2_0_38_ytvis_swin.sh
+
 python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_ytvis2019.pth SOLVER.IMS_PER_BATCH=4
 
 <a id="r50___ipsc_all_frames_roi_g2_0_3_8_"></a>
