@@ -1,20 +1,24 @@
 <!-- MarkdownTOC -->
 
 - [virtualenv](#virtualen_v_)
+    - [grs/python3.6       @ virtualenv](#grs_python3_6___virtualenv_)
+    - [general       @ virtualenv](#general___virtualenv_)
     - [windows       @ virtualenv](#windows___virtualenv_)
     - [cc       @ virtualenv](#cc___virtualenv_)
     - [cuda_version       @ virtualenv](#cuda_version___virtualenv_)
 - [install](#install_)
     - [pytorch       @ install](#pytorch___instal_l_)
     - [detectron2       @ install](#detectron2___instal_l_)
-    - [opencv        @ install](#opencv___instal_l_)
-        - [3.4.11.45       @ /install](#3_4_11_45____install_)
     - [grs/python3.6       @ install](#grs_python3_6___instal_l_)
         - [windows       @ grs/python3.6/install](#windows___grs_python3_6_instal_l_)
+    - [opencv       @ install](#opencv___instal_l_)
+        - [3.4.11.45       @ opencv/install](#3_4_11_45___opencv_install_)
+        - [4.5.4.60       @ opencv/install](#4_5_4_60___opencv_install_)
     - [requirements       @ install](#requirements___instal_l_)
     - [cuda_operators       @ install](#cuda_operators___instal_l_)
         - [cc       @ cuda_operators/install](#cc___cuda_operators_install_)
 - [bugs](#bug_s_)
+    - [windows       @ bugs](#windows___bugs_)
 - [new_dataset](#new_dataset_)
     - [ytvis19       @ new_dataset](#ytvis19___new_datase_t_)
 
@@ -22,6 +26,18 @@
 
 <a id="virtualen_v_"></a>
 # virtualenv
+<a id="grs_python3_6___virtualenv_"></a>
+## grs/python3.6       @ virtualenv-->vita_setup
+
+apt install libpython3.8-dev
+apt-get install python3.8-dev
+apt-get install python3.8-tk
+
+python3.8 -m pip install virtualenv virtualenvwrapper
+mkvirtualenv -p python3.8 vita 
+
+<a id="general___virtualenv_"></a>
+## general       @ virtualenv-->vita_setup
 python3 -m pip install virtualenv virtualenvwrapper
 
 nano ~/.bashrc
@@ -71,17 +87,15 @@ python -m pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio==
 git clone https://github.com/facebookresearch/detectron2.git
 python -m pip install -e detectron2
 
-<a id="opencv___instal_l_"></a>
-##opencv        @ install-->vita_setup
-<a id="3_4_11_45____install_"></a>
-### 3.4.11.45       @ /install-->vita_setup
-python -m pip install opencv-python==3.4.11.45 opencv-contrib-python==3.4.11.45
-
 <a id="grs_python3_6___instal_l_"></a>
 ## grs/python3.6       @ install-->vita_setup
-```
-python_requires=">=3.6",
-```
+nano detectron2/setup.py
+`python_requires=">=3.6"`
+
+__does not work__
+git clone -b legacy_py3.6 https://github.com/QUVA-Lab/e2cnn.git
+cd e2cnn
+python setup.py install
 
 <a id="windows___grs_python3_6_instal_l_"></a>
 ### windows       @ grs/python3.6/install-->vita_setup
@@ -101,9 +115,20 @@ change in `detectron2\layers\csrc\nms_rotated\nms_rotated_cuda.cu`
 <a id="endif__1"></a>
 #endif
 */
-<a id="include__box_iou_rotated_box_iou_rotated_utils_h__"></a>
 #include "box_iou_rotated/box_iou_rotated_utils.h"
 ```
+<a id="opencv___instal_l_"></a>
+## opencv       @ install-->vita_setup
+python -m pip install opencv-python 
+
+<a id="3_4_11_45___opencv_install_"></a>
+### 3.4.11.45       @ opencv/install-->vita_setup
+python -m pip install opencv-python==3.4.11.45 opencv-contrib-python==3.4.11.45
+
+<a id="4_5_4_60___opencv_install_"></a>
+### 4.5.4.60       @ opencv/install-->vita_setup
+python36 -m pip install opencv-python==4.5.4.60 opencv-contrib-python==4.5.4.60
+
 <a id="requirements___instal_l_"></a>
 ## requirements       @ install-->vita_setup
 python -m pip install -r requirements.txt
@@ -111,7 +136,7 @@ python -m pip install -r requirements.txt
 <a id="cuda_operators___instal_l_"></a>
 ## cuda_operators       @ install-->vita_setup
 cd mask2former/modeling/pixel_decoder/ops
-python setup.py build install
+python setup.py build install FORCE_CUDA=1
 cd -
 
 <a id="cc___cuda_operators_install_"></a>
@@ -127,13 +152,11 @@ python3 setup.py build install
 
 <a id="bug_s_"></a>
 # bugs
-`AttributeError: module 'distutils' has no attribute 'version'`
-python3 -m pip install setuptools==59.5.0
-
-`RuntimeError: received 0 items of ancdata`
-https://github.com/pytorch/pytorch/issues/973
-torch.multiprocessing.set_sharing_strategy('file_system')
-https://github.com/pytorch/pytorch/issues/973#issuecomment-459398189
+<a id="windows___bugs_"></a>
+## windows       @ bugs-->vita_setup
+`RuntimeError: Distributed package doesn't have NCCL built in`
+change `backend="NCCL"` to `backend="GLOO"` in 
+"C:\UofA\PhD\ipsc_cell_tracking\ipsc_vita\detectron2\detectron2\engine\launch.py"
 
 <a id="new_dataset_"></a>
 # new_dataset
