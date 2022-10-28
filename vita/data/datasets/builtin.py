@@ -68,10 +68,6 @@ _PREDEFINED_SPLITS_YTVIS_2019 = {
 
 }
 
-_PREDEFINED_SPLITS_YTVIS_2019 = {
-
-}
-
 
 # ==== Predefined splits for YTVIS 2021 ===========
 _PREDEFINED_SPLITS_YTVIS_2021 = {
@@ -108,12 +104,27 @@ _PREDEFINED_SPLITS_COCO_VIDEO = {
 def register_all_ytvis_2019(root):
     for key, (image_root, json_file) in _PREDEFINED_SPLITS_YTVIS_2019.items():
         # Assume pre-defined datasets live in `./datasets`.
-        register_ytvis_instances(
-            key,
-            _get_ytvis_2019_instances_meta(),
-            os.path.join(root, json_file) if "://" not in json_file else json_file,
-            os.path.join(root, image_root),
-        )
+        if 'mj_rock' in key:
+            register_ytvis_instances(
+                key,
+                _get_ytvis_2019_mj_rocks_instances_meta(),
+                os.path.join(root, json_file) if "://" not in json_file else json_file,
+                os.path.join(root, image_root),
+            )
+        elif 'ipsc' in key:
+            register_ytvis_instances(
+                key,
+                _get_ytvis_2019_ipsc_instances_meta(),
+                os.path.join(root, json_file) if "://" not in json_file else json_file,
+                os.path.join(root, image_root),
+            )
+        else:
+            register_ytvis_instances(
+                key,
+                _get_ytvis_2019_instances_meta(),
+                os.path.join(root, json_file) if "://" not in json_file else json_file,
+                os.path.join(root, image_root),
+            )
 
 
 def register_all_ytvis_2021(root):
