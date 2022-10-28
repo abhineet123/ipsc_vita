@@ -7,6 +7,8 @@
 - [install](#install_)
     - [pytorch       @ install](#pytorch___instal_l_)
     - [detectron2       @ install](#detectron2___instal_l_)
+    - [opencv        @ install](#opencv___instal_l_)
+        - [3.4.11.45       @ /install](#3_4_11_45____install_)
     - [grs/python3.6       @ install](#grs_python3_6___instal_l_)
         - [windows       @ grs/python3.6/install](#windows___grs_python3_6_instal_l_)
     - [requirements       @ install](#requirements___instal_l_)
@@ -44,7 +46,6 @@ vita\Scripts\activate
 
 <a id="cc___virtualenv_"></a>
 ## cc       @ virtualenv-->vita_setup
-
 module load python/3.8
 module load gcc cuda cudnn
 virtualenv vita
@@ -70,6 +71,12 @@ python -m pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio==
 git clone https://github.com/facebookresearch/detectron2.git
 python -m pip install -e detectron2
 
+<a id="opencv___instal_l_"></a>
+##opencv        @ install-->vita_setup
+<a id="3_4_11_45____install_"></a>
+### 3.4.11.45       @ /install-->vita_setup
+python -m pip install opencv-python==3.4.11.45 opencv-contrib-python==3.4.11.45
+
 <a id="grs_python3_6___instal_l_"></a>
 ## grs/python3.6       @ install-->vita_setup
 ```
@@ -81,14 +88,20 @@ python_requires=">=3.6",
 change in `detectron2\layers\csrc\nms_rotated\nms_rotated_cuda.cu`
 ```
 /*
+<a id="ifdef_with_cud_a_"></a>
 #ifdef WITH_CUDA
+<a id="include_____box_iou_rotated_box_iou_rotated_utils_h_"></a>
 #include "../box_iou_rotated/box_iou_rotated_utils.h"
+<a id="endif_"></a>
 #endif
 // TODO avoid this when pytorch supports "same directory" hipification
+<a id="ifdef_with_hip_"></a>
 #ifdef WITH_HIP
 /\#include "box_iou_rotated/box_iou_rotated_utils.h"
+<a id="endif__1"></a>
 #endif
 */
+<a id="include__box_iou_rotated_box_iou_rotated_utils_h__"></a>
 #include "box_iou_rotated/box_iou_rotated_utils.h"
 ```
 <a id="requirements___instal_l_"></a>
