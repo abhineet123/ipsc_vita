@@ -3,6 +3,7 @@ output*
 instant_test_output
 inference_test_output
 
+gitu.sh
 
 *.png
 *.json
@@ -18,6 +19,7 @@ _ext
 *.so
 *.dll
 *.egg-info/
+pretrained/
 build/
 dist/
 wheels/
