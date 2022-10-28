@@ -29,12 +29,11 @@
 <a id="grs_python3_6___virtualenv_"></a>
 ## grs/python3.6       @ virtualenv-->vita_setup
 
-apt install libpython3.8-dev
-apt-get install python3.8-dev
-apt-get install python3.8-tk
+apt-get install python3.9-dev
+apt-get install python3.9-tk
 
-python3.8 -m pip install virtualenv virtualenvwrapper
-mkvirtualenv -p python3.8 vita 
+python3.9 -m pip install virtualenv virtualenvwrapper
+mkvirtualenv -p python3.9 vita 
 
 <a id="general___virtualenv_"></a>
 ## general       @ virtualenv-->vita_setup
@@ -72,7 +71,7 @@ alias vita='source vita/bin/activate'
 
 diskusage_report
 
-scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/pretrained/vita_swin_coco.pth ./
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/pretrained/*.pth ./
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/vita_swin_ytvis2019.pth ./
 
 
@@ -86,6 +85,7 @@ nvcc --version
 <a id="pytorch___instal_l_"></a>
 ## pytorch       @ install-->vita_setup
 python -m pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio===0.10.2+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+
 <a id="detectron2___instal_l_"></a>
 ## detectron2       @ install-->vita_setup
 git clone https://github.com/facebookresearch/detectron2.git
