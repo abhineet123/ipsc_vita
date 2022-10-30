@@ -17,12 +17,6 @@ module load cuda cudnn gcc python/3.8
 
 source vita/bin/activate
 
-cp -r mask2former/modeling/pixel_decoder/ops ~/
-cd ~/ops/
-python3 setup.py build install
-
-cd ~/ipsc_vita
-
 nvidia-smi
 
 python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 4
