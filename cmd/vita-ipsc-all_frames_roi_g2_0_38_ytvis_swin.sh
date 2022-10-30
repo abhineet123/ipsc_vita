@@ -15,7 +15,7 @@
 
 module load cuda cudnn gcc python/3.8
 
-source vita/bin/activate
+source ~/venv_vita/bin/activate
 
 nvidia-smi
 

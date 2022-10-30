@@ -49,21 +49,21 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 source ~/.bashrc
 
-mkvirtualenv vita
-workon vita
+mkvirtualenv venv_vita
+workon venv_vita
 
-alias vita='workon vita'
+alias vita='workon venv_vita'
 
 <a id="windows___virtualenv_"></a>
 ## windows       @ virtualenv-->vita_setup
-virtualenv vita
-vita\Scripts\activate
+virtualenv venv_vita
+venv_vita\Scripts\activate
 
 <a id="cc___virtualenv_"></a>
 ## cc       @ virtualenv-->vita_setup
 module load python/3.8
 module load gcc cuda cudnn
-virtualenv vita
+virtualenv ~/venv_vita
 source vita/bin/activate
 deactivate
 
@@ -147,9 +147,8 @@ cd -
 ## cc       @ install-->vita_setup
 salloc --nodes=1 --time=0:05:0 --account=def-nilanjan --gpus-per-node=1 --mem=4000M --cpus-per-task=1
 module load cuda cudnn gcc python/3.8
-source ~/vita/bin/activate
-cp -r mask2former/modeling/pixel_decoder/ops ~/
-cd ~/ops/
+source vita/bin/activate
+cd mask2former/modeling/pixel_decoder/ops
 python3 setup.py build install
 
 <a id="bug_s_"></a>

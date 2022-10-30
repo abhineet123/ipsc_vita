@@ -20,6 +20,7 @@ _ext
 *.so
 *.dll
 *.egg-info/
+venv_vita/
 log/
 detectron2/
 pretrained/
