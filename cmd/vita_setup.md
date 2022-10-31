@@ -63,11 +63,11 @@ venv_vita\Scripts\activate
 ## cc       @ virtualenv-->vita_setup
 module load python/3.8
 module load gcc cuda cudnn
-virtualenv ~/venv_vita
-source vita/bin/activate
+virtualenv ~/venv/vita
+source ~/venv/vita/bin/activate
 deactivate
 
-alias vita='source vita/bin/activate'
+alias vita='source ~/venv/vita/bin/activate'
 
 diskusage_report
 
@@ -147,7 +147,7 @@ cd -
 ## cc       @ install-->vita_setup
 salloc --nodes=1 --time=0:05:0 --account=def-nilanjan --gpus-per-node=1 --mem=4000M --cpus-per-task=1
 module load cuda cudnn gcc python/3.8
-source vita/bin/activate
+source ~/venv/vita/bin/activate
 cd mask2former/modeling/pixel_decoder/ops
 python3 setup.py build install
 

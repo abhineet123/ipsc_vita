@@ -8,14 +8,14 @@
 #SBATCH --job-name=ipsc-all_frames_roi_g2_0_38_ytvis_swinL
 #SBATCH --output=%x_%j.out
 
-#SBATCH --time=0-15:00            # time (DD-HH:MM)
+#SBATCH --time=0-20:00            # time (DD-HH:MM)
 
 #SBATCH --mail-user=asingh1@ualberta.ca
 #SBATCH --mail-type=ALL
 
 module load cuda cudnn gcc python/3.8
 
-source ~/venv_vita/bin/activate
+source ~/venv/vita/bin/activate
 
 nvidia-smi
 

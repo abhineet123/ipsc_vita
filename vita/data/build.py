@@ -89,23 +89,25 @@ def get_detection_dataset_dicts(
     if isinstance(dataset_names, str):
         dataset_names = [dataset_names]
     assert len(dataset_names)
-    dataset_dicts = [DatasetCatalog.get(dataset_name) for dataset_name in dataset_names]
-    for dataset_name, dicts in zip(dataset_names, dataset_dicts):
+    dataset_dicts_raw = [DatasetCatalog.get(dataset_name) for dataset_name in dataset_names]
+    for dataset_name, dicts in zip(dataset_names, dataset_dicts_raw):
         assert len(dicts), "Dataset '{}' is empty!".format(dataset_name)
 
     if proposal_files is not None:
         assert len(dataset_names) == len(proposal_files)
         # load precomputed proposals from proposal files
-        dataset_dicts = [
+        dataset_dicts_raw = [
             load_proposals_into_dataset(dataset_i_dicts, proposal_file)
-            for dataset_i_dicts, proposal_file in zip(dataset_dicts, proposal_files)
+            for dataset_i_dicts, proposal_file in zip(dataset_dicts_raw, proposal_files)
         ]
 
-    dataset_dicts = list(itertools.chain.from_iterable(dataset_dicts))
+    dataset_dicts_raw = list(itertools.chain.from_iterable(dataset_dicts_raw))
 
-    has_instances = "annotations" in dataset_dicts[0]
+    has_instances = "annotations" in dataset_dicts_raw[0]
     if filter_empty and has_instances:
-        dataset_dicts = filter_images_with_only_crowd_annotations(dataset_dicts, dataset_names)
+        dataset_dicts = filter_images_with_only_crowd_annotations(dataset_dicts_raw, dataset_names)
+    else:
+        dataset_dicts = dataset_dicts_raw
 
     assert len(dataset_dicts), "No valid data found in {}.".format(",".join(dataset_names))
     return dataset_dicts

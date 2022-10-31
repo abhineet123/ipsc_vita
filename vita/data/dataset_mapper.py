@@ -138,19 +138,19 @@ class YTVISDatasetMapper:
 
     @configurable
     def __init__(
-        self,
-        is_train: bool,
-        is_tgt: bool,
-        *,
-        augmentations: List[Union[T.Augmentation, T.Transform]],
-        image_format: str,
-        use_instance_mask: bool = False,
-        sampling_frame_num: int = 2,
-        sampling_frame_range: int = 5,
-        sampling_frame_shuffle: bool = False,
-        num_classes: int = 40,
-        src_dataset_name: str = "",
-        tgt_dataset_name: str = "",
+            self,
+            is_train: bool,
+            is_tgt: bool,
+            *,
+            augmentations: List[Union[T.Augmentation, T.Transform]],
+            image_format: str,
+            use_instance_mask: bool = False,
+            sampling_frame_num: int = 2,
+            sampling_frame_range: int = 5,
+            sampling_frame_shuffle: bool = False,
+            num_classes: int = 40,
+            src_dataset_name: str = "",
+            tgt_dataset_name: str = "",
     ):
         """
         NOTE: this interface is experimental.
@@ -161,15 +161,15 @@ class YTVISDatasetMapper:
             use_instance_mask: whether to process instance segmentation annotations, if available
         """
         # fmt: off
-        self.is_train               = is_train
-        self.is_tgt                 = is_tgt
-        self.augmentations          = T.AugmentationList(augmentations)
-        self.image_format           = image_format
-        self.use_instance_mask      = use_instance_mask
-        self.sampling_frame_num     = sampling_frame_num
-        self.sampling_frame_range   = sampling_frame_range
+        self.is_train = is_train
+        self.is_tgt = is_tgt
+        self.augmentations = T.AugmentationList(augmentations)
+        self.image_format = image_format
+        self.use_instance_mask = use_instance_mask
+        self.sampling_frame_num = sampling_frame_num
+        self.sampling_frame_range = sampling_frame_range
         self.sampling_frame_shuffle = sampling_frame_shuffle
-        self.num_classes            = num_classes
+        self.num_classes = num_classes
 
         if not is_tgt:
             self.src_metadata = MetadataCatalog.get(src_dataset_name)
@@ -237,11 +237,11 @@ class YTVISDatasetMapper:
         if self.is_train:
             ref_frame = random.randrange(video_length)
 
-            start_idx = max(0, ref_frame-self.sampling_frame_range)
-            end_idx = min(video_length, ref_frame+self.sampling_frame_range + 1)
+            start_idx = max(0, ref_frame - self.sampling_frame_range)
+            end_idx = min(video_length, ref_frame + self.sampling_frame_range + 1)
 
             selected_idx = np.random.choice(
-                np.array(list(range(start_idx, ref_frame)) + list(range(ref_frame+1, end_idx))),
+                np.array(list(range(start_idx, ref_frame)) + list(range(ref_frame + 1, end_idx))),
                 self.sampling_frame_num - 1,
             )
             selected_idx = selected_idx.tolist() + [ref_frame]
@@ -333,16 +333,16 @@ class CocoClipDatasetMapper:
 
     @configurable
     def __init__(
-        self,
-        is_train: bool,
-        is_tgt: bool,
-        *,
-        augmentations: List[Union[T.Augmentation, T.Transform]],
-        image_format: str,
-        sampling_frame_num: int = 2,
-        sampling_frame_range: int = 5,
-        src_dataset_name: str = "",
-        tgt_dataset_name: str = "",
+            self,
+            is_train: bool,
+            is_tgt: bool,
+            *,
+            augmentations: List[Union[T.Augmentation, T.Transform]],
+            image_format: str,
+            sampling_frame_num: int = 2,
+            sampling_frame_range: int = 5,
+            src_dataset_name: str = "",
+            tgt_dataset_name: str = "",
     ):
         """
         NOTE: this interface is experimental.
@@ -352,12 +352,12 @@ class CocoClipDatasetMapper:
             image_format: an image format supported by :func:`detection_utils.read_image`.
         """
         # fmt: off
-        self.is_train               = is_train
-        self.is_tgt                 = is_tgt
-        self.augmentations          = T.AugmentationList(augmentations)
-        self.image_format           = image_format
-        self.sampling_frame_num     = sampling_frame_num
-        self.sampling_frame_range   = sampling_frame_range
+        self.is_train = is_train
+        self.is_tgt = is_tgt
+        self.augmentations = T.AugmentationList(augmentations)
+        self.image_format = image_format
+        self.sampling_frame_num = sampling_frame_num
+        self.sampling_frame_range = sampling_frame_range
 
         if not is_tgt:
             self.src_metadata = MetadataCatalog.get(src_dataset_name)
@@ -421,11 +421,11 @@ class CocoClipDatasetMapper:
             video_length = random.randrange(16, 49)
             ref_frame = random.randrange(video_length)
 
-            start_idx = max(0, ref_frame-self.sampling_frame_range)
-            end_idx = min(video_length, ref_frame+self.sampling_frame_range + 1)
+            start_idx = max(0, ref_frame - self.sampling_frame_range)
+            end_idx = min(video_length, ref_frame + self.sampling_frame_range + 1)
 
             selected_idx = np.random.choice(
-                np.array(list(range(start_idx, ref_frame)) + list(range(ref_frame+1, end_idx))),
+                np.array(list(range(start_idx, ref_frame)) + list(range(ref_frame + 1, end_idx))),
                 self.sampling_frame_num - 1,
             )
             selected_idx = selected_idx.tolist() + [ref_frame]

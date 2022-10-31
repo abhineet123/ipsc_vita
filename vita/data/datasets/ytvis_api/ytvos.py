@@ -31,6 +31,7 @@ from pycocotools import mask as maskUtils
 import os
 from collections import defaultdict
 import sys
+
 PYTHON_VERSION = sys.version_info[0]
 if PYTHON_VERSION == 2:
     from urllib import urlretrieve
@@ -51,14 +52,14 @@ class YTVOS:
         :return:
         """
         # load dataset
-        self.dataset,self.anns,self.cats,self.vids = dict(),dict(),dict(),dict()
+        self.dataset, self.anns, self.cats, self.vids = dict(), dict(), dict(), dict()
         self.vidToAnns, self.catToVids = defaultdict(list), defaultdict(list)
         if not annotation_file == None:
             print('loading annotations into memory...')
             tic = time.time()
             dataset = json.load(open(annotation_file, 'r'))
-            assert type(dataset)==dict, 'annotation file format {} not supported'.format(type(dataset))
-            print('Done (t={:0.2f}s)'.format(time.time()- tic))
+            assert type(dataset) == dict, 'annotation file format {} not supported'.format(type(dataset))
+            print('Done (t={:0.2f}s)'.format(time.time() - tic))
             self.dataset = dataset
             self.createIndex()
 
@@ -66,7 +67,7 @@ class YTVOS:
         # create index
         print('creating index...')
         anns, cats, vids = {}, {}, {}
-        vidToAnns,catToVids = defaultdict(list),defaultdict(list)
+        vidToAnns, catToVids = defaultdict(list), defaultdict(list)
         if 'annotations' in self.dataset:
             for ann in self.dataset['annotations']:
                 vidToAnns[ann['video_id']].append(ann)
@@ -121,8 +122,9 @@ class YTVOS:
                 anns = list(itertools.chain.from_iterable(lists))
             else:
                 anns = self.dataset['annotations']
-            anns = anns if len(catIds)  == 0 else [ann for ann in anns if ann['category_id'] in catIds]
-            anns = anns if len(areaRng) == 0 else [ann for ann in anns if ann['avg_area'] > areaRng[0] and ann['avg_area'] < areaRng[1]]
+            anns = anns if len(catIds) == 0 else [ann for ann in anns if ann['category_id'] in catIds]
+            anns = anns if len(areaRng) == 0 else [ann for ann in anns if
+                                                   ann['avg_area'] > areaRng[0] and ann['avg_area'] < areaRng[1]]
         if not iscrowd == None:
             ids = [ann['id'] for ann in anns if ann['iscrowd'] == iscrowd]
         else:
@@ -145,9 +147,9 @@ class YTVOS:
             cats = self.dataset['categories']
         else:
             cats = self.dataset['categories']
-            cats = cats if len(catNms) == 0 else [cat for cat in cats if cat['name']          in catNms]
+            cats = cats if len(catNms) == 0 else [cat for cat in cats if cat['name'] in catNms]
             cats = cats if len(supNms) == 0 else [cat for cat in cats if cat['supercategory'] in supNms]
-            cats = cats if len(catIds) == 0 else [cat for cat in cats if cat['id']            in catIds]
+            cats = cats if len(catIds) == 0 else [cat for cat in cats if cat['id'] in catIds]
         ids = [cat['id'] for cat in cats]
         return ids
 
@@ -205,7 +207,6 @@ class YTVOS:
         elif type(ids) == int:
             return [self.vids[ids]]
 
-
     def loadRes(self, resFile):
         """
         Load result file and return a result api object.
@@ -226,7 +227,7 @@ class YTVOS:
         assert type(anns) == list, 'results in not an array of objects'
         annsVidIds = [ann['video_id'] for ann in anns]
         assert set(annsVidIds) == (set(annsVidIds) & set(self.getVidIds())), \
-               'Results do not correspond to current coco set'
+            'Results do not correspond to current coco set'
         if 'segmentations' in anns[0]:
             res.dataset['categories'] = copy.deepcopy(self.dataset['categories'])
             for id, ann in enumerate(anns):
@@ -243,14 +244,14 @@ class YTVOS:
                         ann['areas'].append(None)
                         if len(ann['bboxes']) < len(ann['areas']):
                             ann['bboxes'].append(None)
-                ann['id'] = id+1
+                ann['id'] = id + 1
                 l = [a for a in ann['areas'] if a]
-                if len(l)==0:
-                  ann['avg_area'] = 0
+                if len(l) == 0:
+                    ann['avg_area'] = 0
                 else:
-                  ann['avg_area'] = np.array(l).mean() 
+                    ann['avg_area'] = np.array(l).mean()
                 ann['iscrowd'] = 0
-        print('DONE (t={:0.2f}s)'.format(time.time()- tic))
+        print('DONE (t={:0.2f}s)'.format(time.time() - tic))
 
         res.dataset['annotations'] = anns
         res.createIndex()
