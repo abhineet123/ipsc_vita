@@ -7,7 +7,12 @@
             - [cc       @ ytvis2019/swin/ipsc-all_frames_roi_g2_0_38](#cc___ytvis2019_swin_ipsc_all_frames_roi_g2_0_38_)
     - [r50       @ ipsc-all_frames_roi_g2_0_38](#r50___ipsc_all_frames_roi_g2_0_3_8_)
         - [coco       @ r50/ipsc-all_frames_roi_g2_0_38](#coco___r50_ipsc_all_frames_roi_g2_0_3_8_)
+            - [pc       @ coco/r50/ipsc-all_frames_roi_g2_0_38](#pc___coco_r50_ipsc_all_frames_roi_g2_0_38_)
+            - [grs       @ coco/r50/ipsc-all_frames_roi_g2_0_38](#grs___coco_r50_ipsc_all_frames_roi_g2_0_38_)
+            - [nrw       @ coco/r50/ipsc-all_frames_roi_g2_0_38](#nrw___coco_r50_ipsc_all_frames_roi_g2_0_38_)
         - [ytvis2019       @ r50/ipsc-all_frames_roi_g2_0_38](#ytvis2019___r50_ipsc_all_frames_roi_g2_0_3_8_)
+            - [pc       @ ytvis2019/r50/ipsc-all_frames_roi_g2_0_38](#pc___ytvis2019_r50_ipsc_all_frames_roi_g2_0_3_8_)
+            - [grs       @ ytvis2019/r50/ipsc-all_frames_roi_g2_0_38](#grs___ytvis2019_r50_ipsc_all_frames_roi_g2_0_3_8_)
 
 <!-- /MarkdownTOC -->
 
@@ -32,17 +37,32 @@ python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc
 
 <a id="r50___ipsc_all_frames_roi_g2_0_3_8_"></a>
 ## r50       @ ipsc-all_frames_roi_g2_0_38-->vita
+
 <a id="coco___r50_ipsc_all_frames_roi_g2_0_3_8_"></a>
 ### coco       @ r50/ipsc-all_frames_roi_g2_0_38-->vita
+
+<a id="pc___coco_r50_ipsc_all_frames_roi_g2_0_38_"></a>
+#### pc       @ coco/r50/ipsc-all_frames_roi_g2_0_38-->vita
 python train_net_vita.py --num-gpus 1 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_R50_bs8.yaml MODEL.WEIGHTS pretrained/vita_r50_coco.pth SOLVER.IMS_PER_BATCH 1
 
+<a id="grs___coco_r50_ipsc_all_frames_roi_g2_0_38_"></a>
+#### grs       @ coco/r50/ipsc-all_frames_roi_g2_0_38-->vita
+python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_R50_bs8.yaml MODEL.WEIGHTS pretrained/vita_r50_coco.pth SOLVER.IMS_PER_BATCH 2
+
+<a id="nrw___coco_r50_ipsc_all_frames_roi_g2_0_38_"></a>
+#### nrw       @ coco/r50/ipsc-all_frames_roi_g2_0_38-->vita
 python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_R50_bs8.yaml MODEL.WEIGHTS pretrained/vita_r50_coco.pth SOLVER.IMS_PER_BATCH 4
 
 <a id="ytvis2019___r50_ipsc_all_frames_roi_g2_0_3_8_"></a>
 ### ytvis2019       @ r50/ipsc-all_frames_roi_g2_0_38-->vita
+
+<a id="pc___ytvis2019_r50_ipsc_all_frames_roi_g2_0_3_8_"></a>
+#### pc       @ ytvis2019/r50/ipsc-all_frames_roi_g2_0_38-->vita
 python train_net_vita.py --num-gpus 1 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_R50_bs8.yaml MODEL.WEIGHTS pretrained/vita_r50_ytvis2019.pth SOLVER.IMS_PER_BATCH 1
 
-python train_net_vita.py --num-gpus 1 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_R50_bs8.yaml MODEL.WEIGHTS pretrained/vita_r50_ytvis2019.pth SOLVER.IMS_PER_BATCH 2
+<a id="grs___ytvis2019_r50_ipsc_all_frames_roi_g2_0_3_8_"></a>
+#### grs       @ ytvis2019/r50/ipsc-all_frames_roi_g2_0_38-->vita
+python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_R50_bs8.yaml MODEL.WEIGHTS pretrained/vita_r50_ytvis2019.pth SOLVER.IMS_PER_BATCH 2
 
 
 
