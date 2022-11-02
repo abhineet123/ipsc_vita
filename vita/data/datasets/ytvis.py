@@ -20,18 +20,18 @@ logger = logging.getLogger(__name__)
 
 __all__ = ["load_ytvis_json", "register_ytvis_instances"]
 
-
 COCO_TO_YTVIS_2019 = {
-    1:1, 2:21, 3:6, 4:21, 5:28, 7:17, 8:29, 9:34, 17:14, 18:8, 19:18, 21:15, 22:32, 23:20, 24:30, 25:22, 35:33, 36:33, 41:5, 42:27, 43:40
+    1: 1, 2: 21, 3: 6, 4: 21, 5: 28, 7: 17, 8: 29, 9: 34, 17: 14, 18: 8, 19: 18, 21: 15, 22: 32, 23: 20, 24: 30, 25: 22,
+    35: 33, 36: 33, 41: 5, 42: 27, 43: 40
 }
 COCO_TO_YTVIS_2021 = {
-    1:26, 2:23, 3:5, 4:23, 5:1, 7:36, 8:37, 9:4, 16:3, 17:6, 18:9, 19:19, 21:7, 22:12, 23:2, 24:40, 25:18, 34:14, 35:31, 36:31, 41:29, 42:33, 43:34
+    1: 26, 2: 23, 3: 5, 4: 23, 5: 1, 7: 36, 8: 37, 9: 4, 16: 3, 17: 6, 18: 9, 19: 19, 21: 7, 22: 12, 23: 2, 24: 40,
+    25: 18, 34: 14, 35: 31, 36: 31, 41: 29, 42: 33, 43: 34
 }
-
 
 YTVIS_MJ_ROCKS_CATEGORIES_2019 = [
     {"color": [0, 255, 0], "isthing": 1, "id": 1, "name": "rock"},
-    {"color": [255, 0, 0], "isthing": 1, "id": 2, "name": "syn"},
+    # {"color": [255, 0, 0], "isthing": 1, "id": 2, "name": "syn"},
 ]
 
 YTVIS_IPSC_CATEGORIES_2019 = [
@@ -82,7 +82,6 @@ YTVIS_CATEGORIES_2019 = [
     {"color": [255, 208, 186], "isthing": 1, "id": 40, "name": "tennis_racket"},
 ]
 
-
 YTVIS_CATEGORIES_2021 = [
     {"color": [106, 0, 228], "isthing": 1, "id": 1, "name": "airplane"},
     {"color": [174, 57, 255], "isthing": 1, "id": 2, "name": "bear"},
@@ -130,7 +129,7 @@ YTVIS_CATEGORIES_2021 = [
 def _get_ytvis_2019_mj_rocks_instances_meta():
     thing_ids = [k["id"] for k in YTVIS_MJ_ROCKS_CATEGORIES_2019 if k["isthing"] == 1]
     thing_colors = [k["color"] for k in YTVIS_MJ_ROCKS_CATEGORIES_2019 if k["isthing"] == 1]
-    assert len(thing_ids) == 2, len(thing_ids)
+    assert len(thing_ids) == 1, len(thing_ids)
     # Mapping from the incontiguous YTVIS category id to an id in [0, 1]
     thing_dataset_id_to_contiguous_id = {k: i for i, k in enumerate(thing_ids)}
     thing_classes = [k["name"] for k in YTVIS_MJ_ROCKS_CATEGORIES_2019 if k["isthing"] == 1]
@@ -140,6 +139,7 @@ def _get_ytvis_2019_mj_rocks_instances_meta():
         "thing_colors": thing_colors,
     }
     return ret
+
 
 def _get_ytvis_2019_ipsc_instances_meta():
     thing_ids = [k["id"] for k in YTVIS_IPSC_CATEGORIES_2019 if k["isthing"] == 1]
@@ -309,7 +309,7 @@ Category ids in annotations are not in [1, #categories]! We'll apply a mapping f
                 num_instances_without_valid_segmentation
             )
             + "There might be issues in your dataset generation process. "
-            "A valid polygon should be a list[float] with even length >= 6."
+              "A valid polygon should be a list[float] with even length >= 6."
         )
     return dataset_dicts
 
@@ -350,7 +350,7 @@ if __name__ == "__main__":
     from PIL import Image
 
     logger = setup_logger(name=__name__)
-    #assert sys.argv[3] in DatasetCatalog.list()
+    # assert sys.argv[3] in DatasetCatalog.list()
     meta = MetadataCatalog.get("ytvis_2019_train")
 
     json_file = "./datasets/ytvis/instances_train_sub.json"
@@ -361,6 +361,7 @@ if __name__ == "__main__":
     dirname = "ytvis-data-vis"
     os.makedirs(dirname, exist_ok=True)
 
+
     def extract_frame_dic(dic, frame_idx):
         import copy
         frame_dic = copy.deepcopy(dic)
@@ -369,6 +370,7 @@ if __name__ == "__main__":
             frame_dic["annotations"] = annos[frame_idx]
 
         return frame_dic
+
 
     for d in dicts:
         vid_name = d["file_names"][0].split('/')[-2]

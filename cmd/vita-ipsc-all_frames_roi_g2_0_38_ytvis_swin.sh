@@ -5,7 +5,7 @@
 #SBATCH --gpus-per-node=2
 #SBATCH --cpus-per-task=4
 
-#SBATCH --job-name=ipsc-all_frames_roi_g2_0_38_ytvis_swinL
+#SBATCH --job-name=vita-ipsc-all_frames_roi_g2_0_38_swin
 #SBATCH --output=%x_%j.out
 
 #SBATCH --time=0-20:00            # time (DD-HH:MM)
