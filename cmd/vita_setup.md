@@ -21,6 +21,7 @@
     - [windows       @ bugs](#windows___bugs_)
 - [new_dataset](#new_dataset_)
     - [ytvis19       @ new_dataset](#ytvis19___new_datase_t_)
+- [scp](#scp_)
 
 <!-- /MarkdownTOC -->
 
@@ -167,6 +168,11 @@ change `backend="NCCL"` to `backend="GLOO"` in
 "C:\UofA\PhD\ipsc_cell_tracking\ipsc_vnext\projects\SeqFormer\seqformer\data\datasets\builtin.py"
 `_PREDEFINED_SPLITS_YTVIS_2019`
 `register_all_ytvis_2019`
+
+<a id="scp_"></a>
+# scp
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/home/abhineet/ipsc_vita/pretrained ./
+
 
 
 
