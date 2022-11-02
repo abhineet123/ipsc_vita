@@ -1,6 +1,6 @@
 _BASE_: Base-YouTubeVIS-VideoInstanceSegmentation.yaml
 MODEL:
-  WEIGHTS: "vita_r50_coco.pth"
+  WEIGHTS: "pretrainedvita_r50_coco.pth"
   PIXEL_MEAN: [143.12, 137.32, 138.46]
   PIXEL_STD: [38.39, 41.68, 41.96]
   META_ARCHITECTURE: "Vita"
