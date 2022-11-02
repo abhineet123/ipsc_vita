@@ -110,4 +110,4 @@ INPUT:
 DATALOADER:
   FILTER_EMPTY_ANNOTATIONS: True
   NUM_WORKERS: 8
-OUTPUT_DIR: ./ipsc-all_frames_roi_g2_0_38_r101
+OUTPUT_DIR: ./log/ipsc-all_frames_roi_g2_0_38_r101
