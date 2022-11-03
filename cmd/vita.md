@@ -95,7 +95,7 @@ python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/db3_
 
 <a id="coco___r101_db3_2_to_17_except_6_"></a>
 ### coco       @ r101/db3_2_to_17_except_6-->vita
-python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/db3_2_to_17_except_6-vitaR-101_bs2.yaml MODEL.WEIGHTS pretrained/vita_r101_coco.pth SOLVER.IMS_PER_BATCH 2
+python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/db3_2_to_17_except_6-vita_R101_bs2.yaml MODEL.WEIGHTS pretrained/vita_r101_coco.pth SOLVER.IMS_PER_BATCH 2
 
 
 
