@@ -2,6 +2,8 @@
 
 - [virtualenv](#virtualen_v_)
     - [grs/python3.6       @ virtualenv](#grs_python3_6___virtualenv_)
+        - [3.9       @ grs/python3.6/virtualenv](#3_9___grs_python3_6_virtualenv_)
+        - [3.7       @ grs/python3.6/virtualenv](#3_7___grs_python3_6_virtualenv_)
     - [general       @ virtualenv](#general___virtualenv_)
     - [windows       @ virtualenv](#windows___virtualenv_)
     - [cc       @ virtualenv](#cc___virtualenv_)
@@ -30,11 +32,28 @@
 <a id="grs_python3_6___virtualenv_"></a>
 ## grs/python3.6       @ virtualenv-->vita_setup
 
+<a id="3_9___grs_python3_6_virtualenv_"></a>
+### 3.9       @ grs/python3.6/virtualenv-->vita_setup
 apt-get install python3.9-dev
 apt-get install python3.9-tk
 
+wget https://bootstrap.pypa.io/get-pip.py
+python3.9 get-pip.py
+
 python3.9 -m pip install virtualenv virtualenvwrapper
 mkvirtualenv -p python3.9 vita 
+
+<a id="3_7___grs_python3_6_virtualenv_"></a>
+### 3.7       @ grs/python3.6/virtualenv-->vita_setup
+apt-get install python3.7-dev
+apt-get install python3.7-tk
+
+wget https://bootstrap.pypa.io/get-pip.py
+python3.7 get-pip.py
+
+python3.7 -m pip install setuptools==59.5.0
+python3.7 -m pip install virtualenv virtualenvwrapper
+mkvirtualenv -p python3.7 vita 
 
 <a id="general___virtualenv_"></a>
 ## general       @ virtualenv-->vita_setup
@@ -50,8 +69,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 source ~/.bashrc
 
-mkvirtualenv venv_vita
-workon venv_vita
+mkvirtualenv vita
+workon vita
 
 alias vita='workon venv_vita'
 
@@ -71,10 +90,6 @@ deactivate
 alias vita='source ~/venv/vita/bin/activate'
 
 diskusage_report
-
-scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/pretrained/*.pth ./
-scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/vita_swin_ytvis2019.pth ./
-
 
 <a id="cuda_version___virtualenv_"></a>
 ## cuda_version       @ virtualenv-->vita_setup
@@ -172,6 +187,12 @@ change `backend="NCCL"` to `backend="GLOO"` in
 <a id="scp_"></a>
 # scp
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/home/abhineet/ipsc_vita/pretrained ./
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/home/abhineet/ipsc_vita/pretrained/vita_r101_coco.pth ./
+
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/pretrained/*.pth ./
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/vita_swin_ytvis2019.pth ./
+
+
 
 
 
