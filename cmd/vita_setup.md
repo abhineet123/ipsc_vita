@@ -24,6 +24,8 @@
 - [new_dataset](#new_dataset_)
     - [ytvis19       @ new_dataset](#ytvis19___new_datase_t_)
 - [scp](#scp_)
+    - [grs       @ scp](#grs___sc_p_)
+    - [nrw       @ scp](#nrw___sc_p_)
 
 <!-- /MarkdownTOC -->
 
@@ -39,7 +41,9 @@ apt-get install python3.9-tk
 
 wget https://bootstrap.pypa.io/get-pip.py
 python3.9 get-pip.py
+sudo apt-get install python3.9-distutils
 
+python3.9 -m pip install setuptools==59.5.0
 python3.9 -m pip install virtualenv virtualenvwrapper
 mkvirtualenv -p python3.9 vita 
 
@@ -186,12 +190,18 @@ change `backend="NCCL"` to `backend="GLOO"` in
 
 <a id="scp_"></a>
 # scp
+
+<a id="grs___sc_p_"></a>
+## grs       @ scp-->vita_setup
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/home/abhineet/ipsc_vita/pretrained ./
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/home/abhineet/ipsc_vita/pretrained/vita_r101_coco.pth ./
 
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/pretrained/*.pth ./
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/vita_swin_ytvis2019.pth ./
 
+<a id="nrw___sc_p_"></a>
+## nrw       @ scp-->vita_setup
+scp -r asingh1@narval.computecanada.ca:~/scratch/vita_log/vita-ipsc-all_frames_roi_g2_0_38_swin/model_0059999.pth ./
 
 
 

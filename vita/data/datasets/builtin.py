@@ -26,6 +26,7 @@ _PREDEFINED_SPLITS_YTVIS_2019 = {
     "ytvis_2019_val_all_frames": ("ytvis_2019/valid_all_frames/JPEGImages",
                         "ytvis_2019/valid_all_frames.json"),
 
+    # mj_rock
     "ytvis-mj_rock-db3-part12-train": (
         "mojow_rock/rock_dataset3/ytvis19/JPEGImages",
         "mojow_rock/rock_dataset3/ytvis19/mj_rock-db3-part12-train.json"
@@ -53,17 +54,18 @@ _PREDEFINED_SPLITS_YTVIS_2019 = {
         "mojow_rock/rock_dataset3/ytvis19/mj_rock-db3_2_to_17_except_6-val.json"
     ),
 
+    # ipsc
     "ytvis-ipsc-all_frames_roi_g2_0_38-train": (
         "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-all_frames_roi_g2_0_38-train.json"
+        "ipsc/well3/all_frames_roi/ytvis19/ytvis-ipsc-all_frames_roi_g2_0_38-train.json"
     ),
     "ytvis-ipsc-all_frames_roi_g2_0_38-val": (
         "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-all_frames_roi_g2_0_38-val.json"
+        "ipsc/well3/all_frames_roi/ytvis19/ytvis-ipsc-all_frames_roi_g2_0_38-val.json"
     ),
     "ytvis-ipsc-all_frames_roi_g2_39_53-test": (
         "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-all_frames_roi_g2_39_53-test.json"
+        "ipsc/well3/all_frames_roi/ytvis19/ytvis-ipsc-all_frames_roi_g2_39_53.json"
     ),
 
 }

@@ -3,6 +3,7 @@
 - [ipsc-all_frames_roi_g2_0_38](#ipsc_all_frames_roi_g2_0_38_)
     - [swin       @ ipsc-all_frames_roi_g2_0_38](#swin___ipsc_all_frames_roi_g2_0_3_8_)
         - [coco       @ swin/ipsc-all_frames_roi_g2_0_38](#coco___swin_ipsc_all_frames_roi_g2_0_38_)
+        - [on-all_frames_roi_g2_39_53       @ swin/ipsc-all_frames_roi_g2_0_38](#on_all_frames_roi_g2_39_53___swin_ipsc_all_frames_roi_g2_0_38_)
         - [ytvis2019       @ swin/ipsc-all_frames_roi_g2_0_38](#ytvis2019___swin_ipsc_all_frames_roi_g2_0_38_)
             - [cc       @ ytvis2019/swin/ipsc-all_frames_roi_g2_0_38](#cc___ytvis2019_swin_ipsc_all_frames_roi_g2_0_38_)
     - [r50       @ ipsc-all_frames_roi_g2_0_38](#r50___ipsc_all_frames_roi_g2_0_3_8_)
@@ -36,16 +37,26 @@ salloc --nodes=1 --time=0:15:0 --account=def-nilanjan --gpus-per-node=2 --mem=16
 
 sbatch cmd/vita-ipsc-all_frames_roi_g2_0_38_ytvis_swin.sh
 
+```
 python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 4
+```
+<a id="on_all_frames_roi_g2_39_53___swin_ipsc_all_frames_roi_g2_0_38_"></a>
+### on-all_frames_roi_g2_39_53       @ swin/ipsc-all_frames_roi_g2_0_38-->vita
+```
+python projects/SeqFormer/train_net.py --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-all_frames_roi_g2_0_38_swin/model_0059999.pth
+```
+
 
 <a id="ytvis2019___swin_ipsc_all_frames_roi_g2_0_38_"></a>
 ### ytvis2019       @ swin/ipsc-all_frames_roi_g2_0_38-->vita
+```
 python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_ytvis2019.pth SOLVER.IMS_PER_BATCH 2
-
+```
 <a id="cc___ytvis2019_swin_ipsc_all_frames_roi_g2_0_38_"></a>
 #### cc       @ ytvis2019/swin/ipsc-all_frames_roi_g2_0_38-->vita
+```
 python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_ytvis2019.pth SOLVER.IMS_PER_BATCH 4
-
+```
 <a id="r50___ipsc_all_frames_roi_g2_0_3_8_"></a>
 ## r50       @ ipsc-all_frames_roi_g2_0_38-->vita
 
