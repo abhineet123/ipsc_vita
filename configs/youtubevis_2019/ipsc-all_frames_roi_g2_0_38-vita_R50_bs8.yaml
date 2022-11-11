@@ -52,7 +52,7 @@ MODEL:
 DATASETS:
   DATASET_RATIO: [1.0, 0.75]
   TRAIN: ("ytvis-ipsc-all_frames_roi_g2_0_38-train",)
-  TEST: ("ytvis-ipsc-all_frames_roi_g2_39_53-test",)
+  TEST: ("ytvis-ipsc-all_frames_roi_g2_39_53",)
 SOLVER:
   IMS_PER_BATCH: 1
   BASE_LR: 0.00005
