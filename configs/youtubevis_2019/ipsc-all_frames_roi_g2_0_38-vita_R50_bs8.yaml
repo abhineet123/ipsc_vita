@@ -102,4 +102,4 @@ INPUT:
 DATALOADER:
   FILTER_EMPTY_ANNOTATIONS: False
   NUM_WORKERS: 8
-OUTPUT_DIR: ./log/ipsc-all_frames_roi_g2_0_38_r50
+OUTPUT_DIR: ./log/vita-ipsc-all_frames_roi_g2_0_38_r50

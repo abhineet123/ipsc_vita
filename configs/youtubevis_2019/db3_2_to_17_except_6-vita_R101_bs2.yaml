@@ -110,4 +110,4 @@ INPUT:
 DATALOADER:
   FILTER_EMPTY_ANNOTATIONS: True
   NUM_WORKERS: 8
-OUTPUT_DIR: ./log/db3_2_to_17_except_6-vita_r101
+OUTPUT_DIR: ./log/vita-db3_2_to_17_except_6-vita_r101
