@@ -10,6 +10,7 @@
     - [cuda_version       @ virtualenv](#cuda_version___virtualenv_)
 - [install](#install_)
     - [pytorch       @ install](#pytorch___instal_l_)
+        - [ubuntu22.04/python_3.10       @ pytorch/install](#ubuntu22_04_python_3_10___pytorch_instal_l_)
     - [detectron2       @ install](#detectron2___instal_l_)
     - [grs/python3.6       @ install](#grs_python3_6___instal_l_)
         - [windows       @ grs/python3.6/install](#windows___grs_python3_6_instal_l_)
@@ -105,6 +106,10 @@ nvcc --version
 <a id="pytorch___instal_l_"></a>
 ## pytorch       @ install-->vita_setup
 python -m pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio===0.10.2+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+
+<a id="ubuntu22_04_python_3_10___pytorch_instal_l_"></a>
+### ubuntu22.04/python_3.10       @ pytorch/install-->vita_setup
+python -m pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html
 
 <a id="detectron2___instal_l_"></a>
 ## detectron2       @ install-->vita_setup

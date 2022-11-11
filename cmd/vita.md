@@ -43,7 +43,7 @@ python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc
 <a id="on_all_frames_roi_g2_39_53___swin_ipsc_all_frames_roi_g2_0_38_"></a>
 ### on-all_frames_roi_g2_39_53       @ swin/ipsc-all_frames_roi_g2_0_38-->vita
 ```
-python projects/SeqFormer/train_net.py --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-all_frames_roi_g2_0_38_swin/model_0059999.pth
+python train_net_vita.py --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-all_frames_roi_g2_0_38_swin/model_0059999.pth
 ```
 
 
