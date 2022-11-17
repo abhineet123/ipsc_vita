@@ -18,8 +18,10 @@
 - [db3_2_to_17_except_6](#db3_2_to_17_except_6_)
     - [r50       @ db3_2_to_17_except_6](#r50___db3_2_to_17_except_6_)
         - [coco       @ r50/db3_2_to_17_except_6](#coco___r50_db3_2_to_17_except_6_)
+        - [on-september_5_2020       @ r50/db3_2_to_17_except_6](#on_september_5_2020___r50_db3_2_to_17_except_6_)
     - [r101       @ db3_2_to_17_except_6](#r101___db3_2_to_17_except_6_)
         - [coco       @ r101/db3_2_to_17_except_6](#coco___r101_db3_2_to_17_except_6_)
+        - [on-september_5_2020       @ r101/db3_2_to_17_except_6](#on_september_5_2020___r101_db3_2_to_17_except_6_)
 
 <!-- /MarkdownTOC -->
 
@@ -116,6 +118,13 @@ python train_net_vita.py --config-file configs/youtubevis_2019/ipsc-all_frames_r
 ```
 python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/db3_2_to_17_except_6-vitaR-50_bs2.yaml MODEL.WEIGHTS pretrained/vita_r50_coco.pth SOLVER.IMS_PER_BATCH 2
 ```
+
+<a id="on_september_5_2020___r50_db3_2_to_17_except_6_"></a>
+### on-september_5_2020       @ r50/db3_2_to_17_except_6-->vita
+```
+python train_net_vita.py --config-file configs/youtubevis_2019/db3_2_to_17_except_6-vitaR-50_bs2.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/db3_2_to_17_except_6-vita_r50/model_0139999.pth
+```
+
 <a id="r101___db3_2_to_17_except_6_"></a>
 ## r101       @ db3_2_to_17_except_6-->vita
 
@@ -124,6 +133,13 @@ python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/db3_
 ```
 python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/db3_2_to_17_except_6-vita_R101_bs2.yaml MODEL.WEIGHTS pretrained/vita_r101_coco.pth SOLVER.IMS_PER_BATCH 2
 ```
+
+<a id="on_september_5_2020___r101_db3_2_to_17_except_6_"></a>
+### on-september_5_2020       @ r101/db3_2_to_17_except_6-->vita
+```
+python train_net_vita.py --config-file configs/youtubevis_2019/db3_2_to_17_except_6-vita_R101_bs2.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/db3_2_to_17_except_6-vita_r101/model_0139999.pth
+```
+
 
 
 
