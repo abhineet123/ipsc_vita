@@ -51,8 +51,9 @@ MODEL:
     SIM_WEIGHT: 0.5
 DATASETS:
   DATASET_RATIO: [1.0, 0.75]
-  TRAIN: ("ytvis-mj_rock-db3_2_to_17_except_6-train",)
-  TEST: ("ytvis-mj_rock-db3_2_to_17_except_6-val",)
+  TRAIN: ("ytvis-mj_rock-db3_2_to_17_except_6-large_huge-train",)
+  # TEST: ("ytvis-mj_rock-db3_2_to_17_except_6-large_huge-val",)
+  TEST: ("ytvis-mj_rock-september_5_2020-large_huge",)
 SOLVER:
   IMS_PER_BATCH: 2
   BASE_LR: 0.00005
