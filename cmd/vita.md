@@ -137,7 +137,7 @@ python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/db3_
 <a id="on_september_5_2020___r101_db3_2_to_17_except_6_"></a>
 ### on-september_5_2020       @ r101/db3_2_to_17_except_6-->vita
 ```
-CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/youtubevis_2019/db3_2_to_17_except_6-vita_R101_bs2.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/db3_2_to_17_except_6-vita_r101/model_0139999.pth
+CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/youtubevis_2019/db3_2_to_17_except_6-vita_R101_bs2.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/db3_2_to_17_except_6-vita_r101/model_0134999.pth
 ```
 
 
