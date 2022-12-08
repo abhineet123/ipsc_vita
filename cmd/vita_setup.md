@@ -26,6 +26,7 @@
     - [ytvis19       @ new_dataset](#ytvis19___new_datase_t_)
 - [scp](#scp_)
     - [grs       @ scp](#grs___sc_p_)
+        - [reorg_roi_annotated_221204_123655.zip       @ grs/scp](#reorg_roi_annotated_221204_123655_zip___grs_sc_p_)
     - [nrw       @ scp](#nrw___sc_p_)
 
 <!-- /MarkdownTOC -->
@@ -203,6 +204,21 @@ scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/home/abhineet/ipsc_vita/pretra
 
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/pretrained/*.pth ./
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc_vita/vita_swin_ytvis2019.pth ./
+
+<a id="reorg_roi_annotated_221204_123655_zip___grs_sc_p_"></a>
+### reorg_roi_annotated_221204_123655.zip       @ grs/scp-->vita_setup
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/reorg_roi_annotated_221204_123655.zip ./
+
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/roi_17861_11316_19661_12616_221205_112359.zip ./
+
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/ext_reorg_roi_xml_annotations_221205_091419.zip ./
+
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/ext_reorg_roi_xml_annotations_221205_091419.zip ./
+
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_38.json ./
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_38-max_length-10.json ./
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_38-max_length-20.json ./
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_39_53.json ./
 
 <a id="nrw___sc_p_"></a>
 ## nrw       @ scp-->vita_setup
