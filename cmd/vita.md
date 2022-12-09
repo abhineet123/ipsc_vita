@@ -109,7 +109,7 @@ salloc --nodes=1 --time=0:15:0 --account=def-nilanjan --gpus-per-node=2 --mem=16
 
 sbatch cmd/vita-ipsc-ext_reorg_roi_g2_0_38_ytvis_swin.sh
 ```
-python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/vita-ipsc-ext_reorg_roi_g2_0_38-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 4
+python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/vita-ipsc-ext_reorg_roi_g2_0_38-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
 ```
 
 <a id="r50_coco___ipsc_ext_reorg_roi_g2_0_38_"></a>
@@ -117,15 +117,15 @@ python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/vita
 <a id="bs1___r50_coco_ipsc_ext_reorg_roi_g2_0_3_8_"></a>
 ### bs1       @ r50-coco/ipsc-ext_reorg_roi_g2_0_38-->vita
 ```
-python train_net_vita.py --num-gpus 1 --config-file configs/youtubevis_2019/vita-ipsc-ext_reorg_roi_g2_0_38-R50_bs8.yaml MODEL.WEIGHTS pretrained/R50_coco.pth SOLVER.IMS_PER_BATCH 1
+python train_net_vita.py --num-gpus 1 --config-file configs/youtubevis_2019/vita-ipsc-ext_reorg_roi_g2_0_38-R50_bs8.yaml MODEL.WEIGHTS SOLVER.IMS_PER_BATCH 1
 ```
 __bs2__  
 ```
-python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/vita-ipsc-ext_reorg_roi_g2_0_38-R50_bs8.yaml MODEL.WEIGHTS pretrained/R50_coco.pth SOLVER.IMS_PER_BATCH 2
+python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/vita-ipsc-ext_reorg_roi_g2_0_38-R50_bs8.yaml SOLVER.IMS_PER_BATCH 2
 ```
 __bs4__   
 ```
-python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/vita-ipsc-ext_reorg_roi_g2_0_38-R50_bs8.yaml MODEL.WEIGHTS pretrained/R50_coco.pth SOLVER.IMS_PER_BATCH 4
+python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/vita-ipsc-ext_reorg_roi_g2_0_38-R50_bs8.yaml SOLVER.IMS_PER_BATCH 4
 ```
 
 
