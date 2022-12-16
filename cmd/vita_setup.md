@@ -224,6 +224,8 @@ scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi
 ## nrw       @ scp-->vita_setup
 scp -r asingh1@narval.computecanada.ca:~/scratch/vita_log/vita-ipsc-all_frames_roi_g2_0_38_swin/model_0059999.pth ./
 
+scp -r asingh1@narval.computecanada.ca:~/scratch/vita_log/vita-ipsc-ext_reorg_roi_g2_0_38_swin/model_0139999.pth ./
+
 
 
 
