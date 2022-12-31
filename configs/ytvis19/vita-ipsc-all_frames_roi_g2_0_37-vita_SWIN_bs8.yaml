@@ -1,8 +1,19 @@
 _BASE_: Base-YouTubeVIS-VideoInstanceSegmentation.yaml
 MODEL:
-  WEIGHTS: "pretrained/vita_r50_coco.pth"
-  PIXEL_MEAN: [118.52, 118.52, 118.52]
-  PIXEL_STD: [20.43, 20.43, 20.43]
+  WEIGHTS: "pretrained/vita_swin_coco.pth"
+  BACKBONE:
+    NAME: "D2SwinTransformer"
+  SWIN:
+    EMBED_DIM: 192
+    DEPTHS: [2, 2, 18, 2]
+    NUM_HEADS: [6, 12, 24, 48]
+    WINDOW_SIZE: 12
+    APE: False
+    DROP_PATH_RATE: 0.3
+    PATCH_NORM: True
+    PRETRAIN_IMG_SIZE: 384
+  PIXEL_MEAN: [116.613, 116.613, 116.613]
+  PIXEL_STD: [21.463, 21.463, 21.463]
   META_ARCHITECTURE: "Vita"
   MASK_ON: True
   SEM_SEG_HEAD:
@@ -28,7 +39,7 @@ MODEL:
     MASK_WEIGHT: 5.0
     DICE_WEIGHT: 5.0
     HIDDEN_DIM: 256
-    NUM_OBJECT_QUERIES: 100
+    NUM_OBJECT_QUERIES: 200
     NHEADS: 8
     DROPOUT: 0.0
     DIM_FEEDFORWARD: 2048
@@ -51,8 +62,8 @@ MODEL:
     SIM_WEIGHT: 0.5
 DATASETS:
   DATASET_RATIO: [1.0, 0.75]
-  TRAIN: ("ytvis-ipsc-ext_reorg_roi_g2_0_38",)
-  TEST: ("ytvis-ipsc-ext_reorg_roi_g2_39_53",)
+  TRAIN: ("ytvis-ipsc-all_frames_roi_g2_0_37-train",)
+  TEST: ("ytvis-ipsc-all_frames_roi_g2_38_53",)
 SOLVER:
   IMS_PER_BATCH: 1
   BASE_LR: 0.00005
@@ -79,7 +90,7 @@ INPUT:
   AUGMENTATIONS: []
   MIN_SIZE_TRAIN: (288, 320, 352, 384, 416, 448, 480, 512)
   MAX_SIZE_TRAIN: 768
-  MIN_SIZE_TEST: 360
+  MIN_SIZE_TEST: 448
   FORMAT: "RGB"
   CROP:
     ENABLED: True
@@ -100,6 +111,6 @@ INPUT:
     MIN_SCALE: 0.1
     MAX_SCALE: 2.0
 DATALOADER:
-  FILTER_EMPTY_ANNOTATIONS: False
-  NUM_WORKERS: 1
-OUTPUT_DIR: ./log/vita-ipsc-ext_reorg_roi_g2_0_38_r50
+  FILTER_EMPTY_ANNOTATIONS: True
+  NUM_WORKERS: 8
+OUTPUT_DIR: ./log/vita-ipsc-all_frames_roi_g2_0_37_swin
