@@ -236,6 +236,15 @@ class Trainer(DefaultTrainer):
             )
 
         results = OrderedDict()
+
+        output_nane = 'inference'
+        if cfg.OUT_SUFFIX:
+            output_nane = f'{output_nane}_{cfg.OUT_SUFFIX}'
+        output_folder = os.path.join(cfg.OUTPUT_DIR, output_nane)
+        os.makedirs(output_folder, exist_ok=1)
+
+        print(f'\noutput_folder: {output_folder}\n')
+
         for idx, dataset_name in enumerate(cfg.DATASETS.TEST):
             data_loader = cls.build_test_loader(cfg, dataset_name)
             # When evaluators are passed in as arguments,

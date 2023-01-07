@@ -81,12 +81,21 @@ _PREDEFINED_SPLITS_YTVIS_2019 = {
         "ipsc/well3/all_frames_roi/ytvis19/ytvis-ipsc-all_frames_roi_g2_38_53.json"
     ),
 
+    # ipsc-ext_reorg_roi
+    "ytvis-ipsc-ext_reorg_roi_g2_16_53": (
+        "ipsc/well3/all_frames_roi",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_16_53.json"
+    ),
+
+    "ytvis-ipsc-ext_reorg_roi_g2_0_15": (
+        "ipsc/well3/all_frames_roi",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15.json"
+    ),
+
     "ytvis-ipsc-ext_reorg_roi_g2_0_37": (
         "ipsc/well3/all_frames_roi",
         "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_37.json"
     ),
-
-    # ipsc-ext_reorg_roi
 
     "ytvis-ipsc-ext_reorg_roi_g2_0_37-max_length-10": (
         "ipsc/well3/all_frames_roi",
