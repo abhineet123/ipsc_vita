@@ -13,6 +13,9 @@
         - [grs       @ r50-ytvis2019/ipsc-all_frames_roi_g2_0_37](#grs___r50_ytvis2019_ipsc_all_frames_roi_g2_0_3_7_)
     - [r101       @ ipsc-all_frames_roi_g2_0_37](#r101___ipsc_all_frames_roi_g2_0_3_7_)
         - [on-all_frames_roi_g2_38_53       @ r101/ipsc-all_frames_roi_g2_0_37](#on_all_frames_roi_g2_38_53___r101_ipsc_all_frames_roi_g2_0_37_)
+- [ipsc-ext_reorg_roi_g2_16_53](#ipsc_ext_reorg_roi_g2_16_53_)
+    - [swin-coco       @ ipsc-ext_reorg_roi_g2_16_53](#swin_coco___ipsc_ext_reorg_roi_g2_16_5_3_)
+        - [on-ext_reorg_roi_g2_38_53       @ swin-coco/ipsc-ext_reorg_roi_g2_16_53](#on_ext_reorg_roi_g2_38_53___swin_coco_ipsc_ext_reorg_roi_g2_16_5_3_)
 - [ipsc-ext_reorg_roi_g2_0_37](#ipsc_ext_reorg_roi_g2_0_3_7_)
     - [swin-coco       @ ipsc-ext_reorg_roi_g2_0_37](#swin_coco___ipsc_ext_reorg_roi_g2_0_37_)
         - [on-ext_reorg_roi_g2_38_53       @ swin-coco/ipsc-ext_reorg_roi_g2_0_37](#on_ext_reorg_roi_g2_38_53___swin_coco_ipsc_ext_reorg_roi_g2_0_37_)
@@ -100,6 +103,22 @@ python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-al
 ### on-all_frames_roi_g2_38_53       @ r101/ipsc-all_frames_roi_g2_0_37-->vita
 
 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-R101_bs2.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-all_frames_roi_g2_0_37_r101/model_0129999.pth
+
+<a id="ipsc_ext_reorg_roi_g2_16_53_"></a>
+# ipsc-ext_reorg_roi_g2_16_53
+
+<a id="swin_coco___ipsc_ext_reorg_roi_g2_16_5_3_"></a>
+## swin-coco       @ ipsc-ext_reorg_roi_g2_16_53-->vita
+salloc --nodes=1 --time=0:05:0 --account=def-nilanjan --gpus-per-node=1 --mem=16000M --cpus-per-task=4
+salloc --nodes=1 --time=0:15:0 --account=def-nilanjan --gpus-per-node=2 --mem=16000M --cpus-per-task=4
+
+sbatch cmd/vita-ipsc-ext_reorg_roi_g2_16_53_ytvis_swin.sh
+
+python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2 --resume
+
+<a id="on_ext_reorg_roi_g2_38_53___swin_coco_ipsc_ext_reorg_roi_g2_16_5_3_"></a>
+### on-ext_reorg_roi_g2_38_53       @ swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita
+python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0139999.pth
 
 <a id="ipsc_ext_reorg_roi_g2_0_3_7_"></a>
 # ipsc-ext_reorg_roi_g2_0_37

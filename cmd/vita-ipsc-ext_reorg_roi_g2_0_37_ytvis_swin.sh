@@ -5,10 +5,10 @@
 #SBATCH --gpus-per-node=2
 #SBATCH --cpus-per-task=4
 
-#SBATCH --job-name=vita-ipsc-all_frames_roi_g2_0_38_swin
+#SBATCH --job-name=vita-ipsc-ext_reorg_roi_g2_0_37-swin
 #SBATCH --output=%x_%j.out
 
-#SBATCH --time=0-20:00            # time (DD-HH:MM)
+#SBATCH --time=0-24:00            # time (DD-HH:MM)
 
 #SBATCH --mail-user=asingh1@ualberta.ca
 #SBATCH --mail-type=ALL
@@ -19,7 +19,7 @@ source ~/venv/vita/bin/activate
 
 nvidia-smi
 
-python train_net_vita.py --num-gpus 2 --config-file configs/youtubevis_2019/ipsc-all_frames_roi_g2_0_38-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
+python train_net_vita.py --resume --num-gpus 2 --config-file configs/youtubevis_2019/vita-ipsc-ext_reorg_roi_g2_0_37-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
 
 
 
