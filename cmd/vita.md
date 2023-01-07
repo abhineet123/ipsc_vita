@@ -109,12 +109,13 @@ python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-all_frames_roi_
 
 <a id="swin_coco___ipsc_ext_reorg_roi_g2_16_5_3_"></a>
 ## swin-coco       @ ipsc-ext_reorg_roi_g2_16_53-->vita
+```
 salloc --nodes=1 --time=0:05:0 --account=def-nilanjan --gpus-per-node=1 --mem=16000M --cpus-per-task=4
 salloc --nodes=1 --time=0:15:0 --account=def-nilanjan --gpus-per-node=2 --mem=16000M --cpus-per-task=4
 
 sbatch cmd/vita-ipsc-ext_reorg_roi_g2_16_53_ytvis_swin.sh
-
-python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2 --resume
+```
+python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
 
 <a id="on_ext_reorg_roi_g2_38_53___swin_coco_ipsc_ext_reorg_roi_g2_16_5_3_"></a>
 ### on-ext_reorg_roi_g2_38_53       @ swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita
