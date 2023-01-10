@@ -29,6 +29,8 @@
         - [reorg_roi_annotated_221204_123655.zip       @ grs/scp](#reorg_roi_annotated_221204_123655_zip___grs_sc_p_)
     - [nrw       @ scp](#nrw___sc_p_)
         - [vita-ipsc-ext_reorg_roi_g2_16_53_swin       @ nrw/scp](#vita_ipsc_ext_reorg_roi_g2_16_53_swin___nrw_sc_p_)
+    - [from-nrw       @ scp](#from_nrw___sc_p_)
+    - [from-grs       @ scp](#from_grs___sc_p_)
 
 <!-- /MarkdownTOC -->
 
@@ -221,6 +223,10 @@ scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_38-max_length-20.json ./
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_39_53.json ./
 
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_39_53.json ./
+
+
+
 <a id="nrw___sc_p_"></a>
 ## nrw       @ scp-->vita_setup
 scp -r asingh1@narval.computecanada.ca:~/scratch/vita_log/vita-ipsc-all_frames_roi_g2_0_38_swin/model_0059999.pth ./
@@ -229,11 +235,18 @@ scp -r asingh1@narval.computecanada.ca:~/scratch/vita_log/vita-ipsc-ext_reorg_ro
 
 <a id="vita_ipsc_ext_reorg_roi_g2_16_53_swin___nrw_sc_p_"></a>
 ### vita-ipsc-ext_reorg_roi_g2_16_53_swin       @ nrw/scp-->vita_setup
+<a id="from_nrw___sc_p_"></a>
+## from-nrw       @ scp-->vita_setup
 scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0124999.pth ./
 
 scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0119999.pth ./
 
 scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/events.out.** ./
+
+<a id="from_grs___sc_p_"></a>
+## from-grs       @ scp-->vita_setup
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/*.pth ./
+
 
 
 
