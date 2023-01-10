@@ -28,6 +28,7 @@
     - [grs       @ scp](#grs___sc_p_)
         - [reorg_roi_annotated_221204_123655.zip       @ grs/scp](#reorg_roi_annotated_221204_123655_zip___grs_sc_p_)
     - [nrw       @ scp](#nrw___sc_p_)
+        - [vita-ipsc-ext_reorg_roi_g2_16_53_swin       @ nrw/scp](#vita_ipsc_ext_reorg_roi_g2_16_53_swin___nrw_sc_p_)
 
 <!-- /MarkdownTOC -->
 
@@ -226,7 +227,13 @@ scp -r asingh1@narval.computecanada.ca:~/scratch/vita_log/vita-ipsc-all_frames_r
 
 scp -r asingh1@narval.computecanada.ca:~/scratch/vita_log/vita-ipsc-ext_reorg_roi_g2_0_38_swin/model_0139999.pth ./
 
+<a id="vita_ipsc_ext_reorg_roi_g2_16_53_swin___nrw_sc_p_"></a>
+### vita-ipsc-ext_reorg_roi_g2_16_53_swin       @ nrw/scp-->vita_setup
+scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0124999.pth ./
 
+scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0119999.pth ./
+
+scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/events.out.** ./
 
 
 
