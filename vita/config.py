@@ -3,6 +3,12 @@ from detectron2.config import CfgNode as CN
 
 
 def add_vita_config(cfg):
+    # suffix for inference output folder
+    cfg.USE_PROBS = 0
+
+    # suffix for inference output folder
+    cfg.OUT_SUFFIX = ""
+
     cfg.DATASETS.DATASET_RATIO = []
 
     # DataLoader

@@ -153,8 +153,7 @@ python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ex
 
 <a id="on_ext_reorg_roi_g2_0_15___swin_coco_ipsc_ext_reorg_roi_g2_16_5_3_"></a>
 ### on-ext_reorg_roi_g2_0_15       @ swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita
-python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0124999.pth
-
+python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0119999.pth
 
 <a id="db3_2_to_17_except_6_"></a>
 # db3_2_to_17_except_6
