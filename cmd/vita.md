@@ -149,7 +149,7 @@ salloc --nodes=1 --time=0:15:0 --account=def-nilanjan --gpus-per-node=2 --mem=16
 
 sbatch cmd/vita-ipsc-ext_reorg_roi_g2_16_53_ytvis_swin.sh
 ```
-python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2 --resume
+python train_net_vita.py --resume --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
 
 <a id="on_ext_reorg_roi_g2_0_15___swin_coco_ipsc_ext_reorg_roi_g2_16_5_3_"></a>
 ### on-ext_reorg_roi_g2_0_15       @ swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita
