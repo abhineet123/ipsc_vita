@@ -162,7 +162,7 @@ python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g
 #### model_0329999       @ on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita
 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0329999.pth
 
-python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0329999.pth TEST ytvis-ipsc-ext_reorg_roi_g2_0_15-incremental OUT_SUFFIX incremental
+python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0329999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-incremental OUT_SUFFIX incremental
 
 <a id="db3_2_to_17_except_6_"></a>
 # db3_2_to_17_except_6
