@@ -116,7 +116,7 @@ class Trainer(DefaultTrainer):
 
     @classmethod
     def build_test_loader(cls, cfg, dataset_name):
-        dataset_name = cfg.DATASETS.TEST[0]
+        # dataset_name = cfg.DATASETS.TEST[0]
         if dataset_name.startswith('coco'):
             mapper = CocoClipDatasetMapper(cfg, is_train=False)
         elif dataset_name.startswith('ytvis') or dataset_name.startswith('ovis'):
@@ -226,13 +226,19 @@ class Trainer(DefaultTrainer):
         Returns:
             dict: a dict of result metrics
         """
+
+        if cfg.TEST_NAME:
+            test_sets = (cfg.TEST_NAME,)
+        else:
+            test_sets = cfg.DATASETS.TEST
+
         from torch.cuda.amp import autocast
         logger = logging.getLogger(__name__)
         if isinstance(evaluators, DatasetEvaluator):
             evaluators = [evaluators]
         if evaluators is not None:
-            assert len(cfg.DATASETS.TEST) == len(evaluators), "{} != {}".format(
-                len(cfg.DATASETS.TEST), len(evaluators)
+            assert len(test_sets) == len(evaluators), "{} != {}".format(
+                len(test_sets), len(evaluators)
             )
 
         results = OrderedDict()
@@ -255,7 +261,9 @@ class Trainer(DefaultTrainer):
 
         print(f'\noutput_folder: {output_folder}\n')
 
-        for idx, dataset_name in enumerate(cfg.DATASETS.TEST):
+
+
+        for idx, dataset_name in enumerate(test_sets):
             data_loader = cls.build_test_loader(cfg, dataset_name)
             # When evaluators are passed in as arguments,
             # implicitly assume that evaluators can be created before data_loader.
@@ -307,9 +315,6 @@ def setup(args):
 
 def main(args):
     cfg = setup(args)
-
-    if cfg.TEST_NAME:
-        cfg.DATASETS.TEST = (cfg.TEST_NAME,)
 
     if args.eval_only:
         model = Trainer.build_model(cfg)
