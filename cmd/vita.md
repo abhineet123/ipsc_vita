@@ -151,6 +151,8 @@ salloc --nodes=1 --time=0:05:0 --account=def-nilanjan --gpus-per-node=1 --mem=16
 salloc --nodes=1 --time=0:15:0 --account=def-nilanjan --gpus-per-node=2 --mem=16000M --cpus-per-task=4
 
 sbatch cmd/vita-ipsc-ext_reorg_roi_g2_16_53_ytvis_swin.sh
+
+sbatch cmd/vita-ipsc-ext_reorg_roi_g2_16_53_ytvis_swin_retrain.sh
 ```
 python train_net_vita.py --resume --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
 

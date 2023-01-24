@@ -5,7 +5,7 @@
 #SBATCH --gpus-per-node=2
 #SBATCH --cpus-per-task=4
 
-#SBATCH --job-name=vita-ipsc-ext_reorg_roi_g2_16_53-swin
+#SBATCH --job-name=vita-ipsc-ext_reorg_roi_g2_16_53-swin-retrain
 #SBATCH --output=%x_%j.out
 
 #SBATCH --time=0-24:00            # time (DD-HH:MM)
