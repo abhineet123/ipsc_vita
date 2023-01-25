@@ -41,47 +41,42 @@
 
 <a id="swin_coco___ipsc_all_frames_roi_g2_0_3_7_"></a>
 ## swin-coco       @ ipsc-all_frames_roi_g2_0_37-->vita
+```
 salloc --nodes=1 --time=0:05:0 --account=def-nilanjan --gpus-per-node=1 --mem=16000M --cpus-per-task=4
 salloc --nodes=1 --time=0:15:0 --account=def-nilanjan --gpus-per-node=2 --mem=16000M --cpus-per-task=4
 
 sbatch cmd/vita-ipsc-all_frames_roi_g2_0_37_ytvis_swin.sh
-
+```
 python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 4
 
 <a id="on_all_frames_roi_g2_38_53___swin_coco_ipsc_all_frames_roi_g2_0_3_7_"></a>
 ### on-all_frames_roi_g2_38_53       @ swin-coco/ipsc-all_frames_roi_g2_0_37-->vita
-
 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-all_frames_roi_g2_0_37_swin/model_0059999.pth
 
 <a id="swin_ytvis2019___ipsc_all_frames_roi_g2_0_3_7_"></a>
 ## swin-ytvis2019       @ ipsc-all_frames_roi_g2_0_37-->vita
-
 python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_ytvis2019.pth SOLVER.IMS_PER_BATCH 2
 
 <a id="cc___swin_ytvis2019_ipsc_all_frames_roi_g2_0_37_"></a>
 ### cc       @ swin-ytvis2019/ipsc-all_frames_roi_g2_0_37-->vita
-
 python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_ytvis2019.pth SOLVER.IMS_PER_BATCH 4
 
 <a id="r50_coco___ipsc_all_frames_roi_g2_0_3_7_"></a>
 ## r50-coco       @ ipsc-all_frames_roi_g2_0_37-->vita
 <a id="bs1___r50_coco_ipsc_all_frames_roi_g2_0_37_"></a>
 ### bs1       @ r50-coco/ipsc-all_frames_roi_g2_0_37-->vita
-
 python train_net_vita.py --num-gpus 1 --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-R50_bs8.yaml MODEL.WEIGHTS pretrained/R50_coco.pth SOLVER.IMS_PER_BATCH 1
 
 __bs2__  
-
 python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-R50_bs8.yaml MODEL.WEIGHTS pretrained/R50_coco.pth SOLVER.IMS_PER_BATCH 2
 
-__bs4__   
+__bs4__  
 
 python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-R50_bs8.yaml MODEL.WEIGHTS pretrained/R50_coco.pth SOLVER.IMS_PER_BATCH 4
 
 
 <a id="on_all_frames_roi_g2_38_53___r50_coco_ipsc_all_frames_roi_g2_0_37_"></a>
 ### on-all_frames_roi_g2_38_53       @ r50-coco/ipsc-all_frames_roi_g2_0_37-->vita
-
 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-R50_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-all_frames_roi_g2_0_37_r50/model_0039999.pth
 
 
@@ -94,17 +89,14 @@ python train_net_vita.py --num-gpus 1 --config-file configs/ytvis19/vita-ipsc-al
 
 <a id="grs___r50_ytvis2019_ipsc_all_frames_roi_g2_0_3_7_"></a>
 ### grs       @ r50-ytvis2019/ipsc-all_frames_roi_g2_0_37-->vita
-
 python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-R50_bs8.yaml MODEL.WEIGHTS pretrained/R50_ytvis2019.pth SOLVER.IMS_PER_BATCH 2
 
 <a id="r101___ipsc_all_frames_roi_g2_0_3_7_"></a>
 ## r101       @ ipsc-all_frames_roi_g2_0_37-->vita
-
 python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-R101_bs2.yaml
 
 <a id="on_all_frames_roi_g2_38_53___r101_ipsc_all_frames_roi_g2_0_37_"></a>
 ### on-all_frames_roi_g2_38_53       @ r101/ipsc-all_frames_roi_g2_0_37-->vita
-
 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-all_frames_roi_g2_0_37-R101_bs2.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-all_frames_roi_g2_0_37_r101/model_0129999.pth
 
 <a id="ipsc_ext_reorg_roi_g2_0_3_7_"></a>
@@ -155,6 +147,9 @@ sbatch cmd/vita-ipsc-ext_reorg_roi_g2_16_53_ytvis_swin.sh
 sbatch cmd/vita-ipsc-ext_reorg_roi_g2_16_53_ytvis_swin_retrain.sh
 ```
 python train_net_vita.py --resume --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
+
+__retrain__
+python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8_retrain.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
 
 <a id="on_ext_reorg_roi_g2_0_15___swin_coco_ipsc_ext_reorg_roi_g2_16_5_3_"></a>
 ### on-ext_reorg_roi_g2_0_15       @ swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita

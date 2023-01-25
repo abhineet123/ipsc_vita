@@ -31,6 +31,8 @@
         - [vita-ipsc-ext_reorg_roi_g2_16_53_swin       @ nrw/scp](#vita_ipsc_ext_reorg_roi_g2_16_53_swin___nrw_sc_p_)
     - [from-nrw       @ scp](#from_nrw___sc_p_)
     - [from-grs       @ scp](#from_grs___sc_p_)
+        - [vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain       @ from-grs/scp](#vita_ipsc_ext_reorg_roi_g2_16_53_swin_retrain___from_grs_scp_)
+    - [from-nrw       @ scp](#from_nrw___sc_p__1)
 
 <!-- /MarkdownTOC -->
 
@@ -248,6 +250,16 @@ scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reor
 <a id="from_grs___sc_p_"></a>
 ## from-grs       @ scp-->vita_setup
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/*.pth ./
+
+<a id="vita_ipsc_ext_reorg_roi_g2_16_53_swin_retrain___from_grs_scp_"></a>
+### vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain       @ from-grs/scp-->vita_setup
+<a id="from_nrw___sc_p__1"></a>
+## from-nrw       @ scp-->vita_setup
+scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/model_0104999.pth ./
+
+scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/events.out.** ./
+
+
 
 
 
