@@ -257,6 +257,10 @@ scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/vita/log/vita-ipsc-ext_reorg_
 ## from-nrw       @ scp-->vita_setup
 scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/model_0104999.pth ./
 
+scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/model_0079999.pth ./
+
+scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/model_0004999.pth ./
+
 scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/events.out.** ./
 
 

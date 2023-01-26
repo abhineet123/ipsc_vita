@@ -114,4 +114,4 @@ INPUT:
 DATALOADER:
   FILTER_EMPTY_ANNOTATIONS: True
   NUM_WORKERS: 8
-OUTPUT_DIR: ./log/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8_retrain
+OUTPUT_DIR: ./log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain
