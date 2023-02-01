@@ -163,9 +163,9 @@ CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vi
 <a id="swin_coco_retrain___ipsc_ext_reorg_roi_g2_54_126_"></a>
 ## swin-coco-retrain       @ ipsc-ext_reorg_roi_g2_54_126-->vita
 ```
-sbatch cmd/vita-ipsc-ext_reorg_roi_g2_54_126_ytvis_swin_retrain.sh
+sbatch cmd/vita-ipsc-ext_reorg_roi_g2_54_126_ytvis_swin.sh
 ```
-python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8_retrain.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
+python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
 
 
 <a id="swin_coco___ipsc_ext_reorg_roi_g2_54_126_"></a>
