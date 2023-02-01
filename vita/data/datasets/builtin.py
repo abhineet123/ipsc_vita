@@ -82,20 +82,6 @@ _PREDEFINED_SPLITS_YTVIS_2019 = {
     ),
 
     # ipsc-ext_reorg_roi
-    "ytvis-ipsc-ext_reorg_roi_g2_16_53": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_16_53.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_0_15": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_0_15-incremental": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15-incremental.json"
-    ),
 
     "ytvis-ipsc-ext_reorg_roi_g2_0_37": (
         "ipsc/well3/all_frames_roi",
@@ -127,6 +113,33 @@ _PREDEFINED_SPLITS_YTVIS_2019 = {
         "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_seq_1_38_53.json"
     ),
 
+    "ytvis-ipsc-ext_reorg_roi_g2_16_53": (
+        "ipsc/well3/all_frames_roi",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_16_53.json"
+    ),
+
+    "ytvis-ipsc-ext_reorg_roi_g2_0_15": (
+        "ipsc/well3/all_frames_roi",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15.json"
+    ),
+
+    "ytvis-ipsc-ext_reorg_roi_g2_0_15-incremental": (
+        "ipsc/well3/all_frames_roi",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15-incremental.json"
+    ),
+
+    "ytvis-ipsc-ext_reorg_roi_g2_54_126": (
+        "ipsc/well3/all_frames_roi",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_54_126.json"
+    ),
+    "ytvis-ipsc-ext_reorg_roi_g2_0_53": (
+        "ipsc/well3/all_frames_roi",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_53.json"
+    ),
+    "ytvis-ipsc-ext_reorg_roi_g2_0_53-incremental": (
+        "ipsc/well3/all_frames_roi",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_53-incremental.json"
+    ),
 }
 
 # ==== Predefined splits for YTVIS 2021 ===========
