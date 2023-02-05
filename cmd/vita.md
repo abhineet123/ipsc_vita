@@ -24,14 +24,14 @@
             - [model_0004999       @ swin-coco-retrain/ipsc-ext_reorg_roi_g2_16_53](#model_0004999___swin_coco_retrain_ipsc_ext_reorg_roi_g2_16_5_3_)
             - [model_0079999       @ swin-coco-retrain/ipsc-ext_reorg_roi_g2_16_53](#model_0079999___swin_coco_retrain_ipsc_ext_reorg_roi_g2_16_5_3_)
             - [model_0104999       @ swin-coco-retrain/ipsc-ext_reorg_roi_g2_16_53](#model_0104999___swin_coco_retrain_ipsc_ext_reorg_roi_g2_16_5_3_)
+    - [swin-coco       @ ipsc-ext_reorg_roi_g2_16_53](#swin_coco___ipsc_ext_reorg_roi_g2_16_5_3_)
+        - [on-ext_reorg_roi_g2_0_15       @ swin-coco/ipsc-ext_reorg_roi_g2_16_53](#on_ext_reorg_roi_g2_0_15___swin_coco_ipsc_ext_reorg_roi_g2_16_5_3_)
+            - [model_0119999       @ on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_16_53](#model_0119999___on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_16_53_)
+                - [incremental       @ model_0119999/on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_16_53](#incremental___model_0119999_on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_16_53_)
+            - [model_0329999       @ on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_16_53](#model_0329999___on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_16_53_)
+                - [incremental       @ model_0329999/on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_16_53](#incremental___model_0329999_on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_16_53_)
 - [ipsc-ext_reorg_roi_g2_54_126](#ipsc_ext_reorg_roi_g2_54_12_6_)
     - [swin-coco-retrain       @ ipsc-ext_reorg_roi_g2_54_126](#swin_coco_retrain___ipsc_ext_reorg_roi_g2_54_126_)
-    - [swin-coco       @ ipsc-ext_reorg_roi_g2_54_126](#swin_coco___ipsc_ext_reorg_roi_g2_54_126_)
-        - [on-ext_reorg_roi_g2_0_15       @ swin-coco/ipsc-ext_reorg_roi_g2_54_126](#on_ext_reorg_roi_g2_0_15___swin_coco_ipsc_ext_reorg_roi_g2_54_126_)
-            - [model_0119999       @ on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_54_126](#model_0119999___on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_54_12_6_)
-                - [incremental       @ model_0119999/on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_54_126](#incremental___model_0119999_on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_54_12_6_)
-            - [model_0329999       @ on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_54_126](#model_0329999___on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_54_12_6_)
-                - [incremental       @ model_0329999/on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_54_126](#incremental___model_0329999_on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_54_12_6_)
 - [db3_2_to_17_except_6](#db3_2_to_17_except_6_)
     - [r50       @ db3_2_to_17_except_6](#r50___db3_2_to_17_except_6_)
         - [coco       @ r50/db3_2_to_17_except_6](#coco___r50_db3_2_to_17_except_6_)
@@ -158,18 +158,8 @@ CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vi
 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8_retrain.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/model_0104999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-incremental OUT_SUFFIX incremental
 
 
-<a id="ipsc_ext_reorg_roi_g2_54_12_6_"></a>
-# ipsc-ext_reorg_roi_g2_54_126
-<a id="swin_coco_retrain___ipsc_ext_reorg_roi_g2_54_126_"></a>
-## swin-coco-retrain       @ ipsc-ext_reorg_roi_g2_54_126-->vita
-```
-sbatch cmd/vita-ipsc-ext_reorg_roi_g2_54_126_ytvis_swin.sh
-```
-python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
-
-
-<a id="swin_coco___ipsc_ext_reorg_roi_g2_54_126_"></a>
-## swin-coco       @ ipsc-ext_reorg_roi_g2_54_126-->vita
+<a id="swin_coco___ipsc_ext_reorg_roi_g2_16_5_3_"></a>
+## swin-coco       @ ipsc-ext_reorg_roi_g2_16_53-->vita
 ```
 salloc --nodes=1 --time=0:05:0 --account=def-nilanjan --gpus-per-node=1 --mem=16000M --cpus-per-task=4
 salloc --nodes=1 --time=0:15:0 --account=def-nilanjan --gpus-per-node=2 --mem=16000M --cpus-per-task=4
@@ -178,21 +168,30 @@ sbatch cmd/vita-ipsc-ext_reorg_roi_g2_16_53_ytvis_swin.sh
 ```
 python train_net_vita.py --resume --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
 
-<a id="on_ext_reorg_roi_g2_0_15___swin_coco_ipsc_ext_reorg_roi_g2_54_126_"></a>
-### on-ext_reorg_roi_g2_0_15       @ swin-coco/ipsc-ext_reorg_roi_g2_54_126-->vita
-<a id="model_0119999___on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_54_12_6_"></a>
-#### model_0119999       @ on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_54_126-->vita
+<a id="on_ext_reorg_roi_g2_0_15___swin_coco_ipsc_ext_reorg_roi_g2_16_5_3_"></a>
+### on-ext_reorg_roi_g2_0_15       @ swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita
+<a id="model_0119999___on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_16_53_"></a>
+#### model_0119999       @ on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita
 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0119999.pth
-<a id="incremental___model_0119999_on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_54_12_6_"></a>
-##### incremental       @ model_0119999/on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_54_126-->vita
+<a id="incremental___model_0119999_on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_16_53_"></a>
+##### incremental       @ model_0119999/on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita
 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0119999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-incremental OUT_SUFFIX incremental
 
-<a id="model_0329999___on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_54_12_6_"></a>
-#### model_0329999       @ on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_54_126-->vita
+<a id="model_0329999___on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_16_53_"></a>
+#### model_0329999       @ on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita
 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0329999.pth
-<a id="incremental___model_0329999_on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_54_12_6_"></a>
-##### incremental       @ model_0329999/on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_54_126-->vita
+<a id="incremental___model_0329999_on_ext_reorg_roi_g2_0_15_swin_coco_ipsc_ext_reorg_roi_g2_16_53_"></a>
+##### incremental       @ model_0329999/on-ext_reorg_roi_g2_0_15/swin-coco/ipsc-ext_reorg_roi_g2_16_53-->vita
 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_16_53-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_16_53_swin/model_0329999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-incremental OUT_SUFFIX incremental
+
+<a id="ipsc_ext_reorg_roi_g2_54_12_6_"></a>
+# ipsc-ext_reorg_roi_g2_54_126
+<a id="swin_coco_retrain___ipsc_ext_reorg_roi_g2_54_126_"></a>
+## swin-coco-retrain       @ ipsc-ext_reorg_roi_g2_54_126-->vita
+```
+sbatch cmd/vita-ipsc-ext_reorg_roi_g2_54_126_ytvis_swin.sh
+```
+python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
 
 <a id="db3_2_to_17_except_6_"></a>
 # db3_2_to_17_except_6
