@@ -32,7 +32,7 @@
     - [from-nrw       @ scp](#from_nrw___sc_p_)
     - [from-grs       @ scp](#from_grs___sc_p_)
         - [vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain       @ from-grs/scp](#vita_ipsc_ext_reorg_roi_g2_16_53_swin_retrain___from_grs_scp_)
-    - [from-nrw       @ scp](#from_nrw___sc_p__1)
+        - [vita-ipsc-ext_reorg_roi_g2_54_126_swin       @ from-grs/scp](#vita_ipsc_ext_reorg_roi_g2_54_126_swin___from_grs_scp_)
 
 <!-- /MarkdownTOC -->
 
@@ -227,6 +227,9 @@ scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi
 
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:/data/ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_39_53.json ./
 
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc-ext_reorg_roi_g2_0_53_json_grs_230306_212523.zip ./
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc-ext_reorg_roi_g2_0_53-incremental_json_grs_230306_212406.zip ./
+
 
 
 <a id="nrw___sc_p_"></a>
@@ -253,8 +256,6 @@ scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/vita/log/vita-ipsc-ext_reorg_
 
 <a id="vita_ipsc_ext_reorg_roi_g2_16_53_swin_retrain___from_grs_scp_"></a>
 ### vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain       @ from-grs/scp-->vita_setup
-<a id="from_nrw___sc_p__1"></a>
-## from-nrw       @ scp-->vita_setup
 scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/model_0104999.pth ./
 
 scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/model_0079999.pth ./
@@ -262,6 +263,13 @@ scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reor
 scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/model_0004999.pth ./
 
 scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_16_53_swin_retrain/events.out.** ./
+
+
+<a id="vita_ipsc_ext_reorg_roi_g2_54_126_swin___from_grs_scp_"></a>
+### vita-ipsc-ext_reorg_roi_g2_54_126_swin       @ from-grs/scp-->vita_setup
+scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth ./
+
+scp -r asingh1@narval.computecanada.ca:/home/asingh1/vita/log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/events.out.** ./
 
 
 
