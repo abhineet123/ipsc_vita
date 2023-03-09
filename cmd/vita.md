@@ -34,6 +34,7 @@
         - [on-ext_reorg_roi_g2_0_53       @ ipsc-ext_reorg_roi_g2_54_126/](#on_ext_reorg_roi_g2_0_53___ipsc_ext_reorg_roi_g2_54_126__)
             - [incremental       @ on-ext_reorg_roi_g2_0_53/ipsc-ext_reorg_roi_g2_54_126/](#incremental___on_ext_reorg_roi_g2_0_53_ipsc_ext_reorg_roi_g2_54_126_)
         - [on-ext_reorg_roi_g2_0_15       @ ipsc-ext_reorg_roi_g2_54_126/](#on_ext_reorg_roi_g2_0_15___ipsc_ext_reorg_roi_g2_54_126__)
+            - [max_length-2       @ on-ext_reorg_roi_g2_0_15/ipsc-ext_reorg_roi_g2_54_126/](#max_length_2___on_ext_reorg_roi_g2_0_15_ipsc_ext_reorg_roi_g2_54_126_)
 - [ipsc-ext_reorg_roi_g2_54_126-retrain](#ipsc_ext_reorg_roi_g2_54_126_retrai_n_)
 - [db3_2_to_17_except_6](#db3_2_to_17_except_6_)
     - [r50       @ db3_2_to_17_except_6](#r50___db3_2_to_17_except_6_)
@@ -203,6 +204,9 @@ CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vi
 <a id="on_ext_reorg_roi_g2_0_15___ipsc_ext_reorg_roi_g2_54_126__"></a>
 ### on-ext_reorg_roi_g2_0_15       @ ipsc-ext_reorg_roi_g2_54_126/-->vita
 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-incremental OUT_SUFFIX g2_0_15-incremental
+<a id="max_length_2___on_ext_reorg_roi_g2_0_15_ipsc_ext_reorg_roi_g2_54_126_"></a>
+#### max_length-2       @ on-ext_reorg_roi_g2_0_15/ipsc-ext_reorg_roi_g2_54_126/-->vita
+CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-2-incremental OUT_SUFFIX g2_0_15-max_length-2-incremental
 
 <a id="ipsc_ext_reorg_roi_g2_54_126_retrai_n_"></a>
 # ipsc-ext_reorg_roi_g2_54_126-retrain

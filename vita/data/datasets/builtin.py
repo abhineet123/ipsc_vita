@@ -128,6 +128,11 @@ _PREDEFINED_SPLITS_YTVIS_2019 = {
         "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15-incremental.json"
     ),
 
+    "ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-2-incremental": (
+        "ipsc/well3/all_frames_roi",
+        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15-max_length-2-incremental.json"
+    ),
+
     "ytvis-ipsc-ext_reorg_roi_g2_54_126": (
         "ipsc/well3/all_frames_roi",
         "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_54_126.json"
