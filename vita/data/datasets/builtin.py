@@ -12,7 +12,6 @@ from vita.data.datasets.ytvis import (
     _get_ytvis_2019_mj_rocks_instances_meta,
 )
 
-
 # ==== Predefined splits for YTVIS 2019 ===========
 
 # ==== Predefined splits for YTVIS 2019 ===========
@@ -24,7 +23,7 @@ _PREDEFINED_SPLITS_YTVIS_2019 = {
     "ytvis_2019_test": ("ytvis_2019/test/JPEGImages",
                         "ytvis_2019/test.json"),
     "ytvis_2019_val_all_frames": ("ytvis_2019/valid_all_frames/JPEGImages",
-                        "ytvis_2019/valid_all_frames.json"),
+                                  "ytvis_2019/valid_all_frames.json"),
 
     # mj_rock
     "ytvis-mj_rock-db3-part12-large_huge-train": (
@@ -81,84 +80,46 @@ _PREDEFINED_SPLITS_YTVIS_2019 = {
         "ipsc/well3/all_frames_roi/ytvis19/ytvis-ipsc-all_frames_roi_g2_38_53.json"
     ),
 
-    # ipsc-ext_reorg_roi
-
-    "ytvis-ipsc-ext_reorg_roi_g2_0_37": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_37.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_0_37-max_length-10": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_37-max_length-10.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_0_37-max_length-20": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_37-max_length-20.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_38_53-incremental": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_38_53-incremental.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_38_53": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_38_53.json"
-    ),
-
     "ytvis-ipsc-ext_reorg_roi_g2_seq_1_38_53": (
         "ipsc/well3/all_frames_roi",
         "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_seq_1_38_53.json"
     ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_16_53": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_16_53.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_0_15": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-2": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15-max_length-2.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_0_15-incremental": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15-incremental.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-2-incremental": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_15-max_length-2-incremental.json"
-    ),
-
-    "ytvis-ipsc-ext_reorg_roi_g2_54_126": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_54_126.json"
-    ),
-    "ytvis-ipsc-ext_reorg_roi_g2_0_53": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_53.json"
-    ),
-    "ytvis-ipsc-ext_reorg_roi_g2_0_53-max_length-2": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_53-max_length-2.json"
-    ),
-    "ytvis-ipsc-ext_reorg_roi_g2_0_53-incremental": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_53-incremental.json"
-    ),
-    "ytvis-ipsc-ext_reorg_roi_g2_0_53-max_length-2-incremental": (
-        "ipsc/well3/all_frames_roi",
-        "ipsc/well3/all_frames_roi/ytvis19/ipsc-ext_reorg_roi_g2_0_53-max_length-2-incremental.json"
-    ),
 }
+
+for db in (
+        'ext_reorg_roi_g2_0_37',
+        'ext_reorg_roi_g2_38_53',
+        'ext_reorg_roi_g2_16_53',
+        'ext_reorg_roi_g2_0_53',
+        'ext_reorg_roi_g2_0_15',
+        'ext_reorg_roi_g2_54_126'):
+    _PREDEFINED_SPLITS_YTVIS_2019.update(
+        {
+            f"ytvis-ipsc-{db}": {
+                "ipsc/well3/all_frames_roi",
+                f"ipsc/well3/all_frames_roi/ytvis19/ipsc-{db}.json"
+            },
+            f"ytvis-ipsc-{db}-incremental": {
+                "ipsc/well3/all_frames_roi",
+                f"ipsc/well3/all_frames_roi/ytvis19/ipsc-{db}-incremental.json"
+            },
+
+        }
+    )
+    for k in (1, 2, 4, 8, 10, 20):
+        _PREDEFINED_SPLITS_YTVIS_2019.update(
+            {
+                f"ytvis-ipsc-{db}-max_length-{k}": {
+                    "ipsc/well3/all_frames_roi",
+                    f"ipsc/well3/all_frames_roi/ytvis19/ipsc-{db}-max_length-{k}.json"
+                },
+                f"ytvis-ipsc-{db}-max_length-{k}-incremental": {
+                    "ipsc/well3/all_frames_roi",
+                    f"ipsc/well3/all_frames_roi/ytvis19/ipsc-{db}-max_length-{k}-incremental.json"
+                },
+
+            }
+        )
 
 # ==== Predefined splits for YTVIS 2021 ===========
 _PREDEFINED_SPLITS_YTVIS_2021 = {
@@ -170,7 +131,6 @@ _PREDEFINED_SPLITS_YTVIS_2021 = {
                         "ytvis_2021/test.json"),
 }
 
-
 # ====    Predefined splits for OVIS    ===========
 _PREDEFINED_SPLITS_OVIS = {
     "ovis_train": ("ovis/train",
@@ -180,7 +140,6 @@ _PREDEFINED_SPLITS_OVIS = {
     "ovis_test": ("ovis/test",
                   "ovis/annotations/test.json"),
 }
-
 
 _PREDEFINED_SPLITS_COCO_VIDEO = {
     "coco2ytvis2019_train": ("coco/train2017", "coco/annotations/coco2ytvis2019_train.json"),
