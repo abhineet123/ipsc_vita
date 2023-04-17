@@ -95,28 +95,28 @@ for db in (
         'ext_reorg_roi_g2_54_126'):
     _PREDEFINED_SPLITS_YTVIS_2019.update(
         {
-            f"ytvis-ipsc-{db}": {
+            f"ytvis-ipsc-{db}": (
                 "ipsc/well3/all_frames_roi",
                 f"ipsc/well3/all_frames_roi/ytvis19/ipsc-{db}.json"
-            },
-            f"ytvis-ipsc-{db}-incremental": {
+            ),
+            f"ytvis-ipsc-{db}-incremental": (
                 "ipsc/well3/all_frames_roi",
                 f"ipsc/well3/all_frames_roi/ytvis19/ipsc-{db}-incremental.json"
-            },
+            ),
 
         }
     )
     for k in (1, 2, 4, 8, 10, 20):
         _PREDEFINED_SPLITS_YTVIS_2019.update(
             {
-                f"ytvis-ipsc-{db}-max_length-{k}": {
+                f"ytvis-ipsc-{db}-max_length-{k}": (
                     "ipsc/well3/all_frames_roi",
                     f"ipsc/well3/all_frames_roi/ytvis19/ipsc-{db}-max_length-{k}.json"
-                },
-                f"ytvis-ipsc-{db}-max_length-{k}-incremental": {
+                ),
+                f"ytvis-ipsc-{db}-max_length-{k}-incremental": (
                     "ipsc/well3/all_frames_roi",
                     f"ipsc/well3/all_frames_roi/ytvis19/ipsc-{db}-max_length-{k}-incremental.json"
-                },
+                ),
 
             }
         )
