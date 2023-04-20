@@ -216,8 +216,14 @@ CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vi
 <a id="on_ext_reorg_roi_g2_0_15___ipsc_ext_reorg_roi_g2_54_126__"></a>
 ### on-ext_reorg_roi_g2_0_15       @ ipsc-ext_reorg_roi_g2_54_126/-->vita
 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15 OUT_SUFFIX g2_0_15
+__max_length-1__ 
+CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-1 OUT_SUFFIX g2_0_15-max_length-1
 __max_length-2__ 
 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-2 OUT_SUFFIX g2_0_15-max_length-2
+__max_length-4__ 
+CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-4 OUT_SUFFIX g2_0_15-max_length-4
+__max_length-8__ 
+CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-8 OUT_SUFFIX g2_0_15-max_length-8
 
 <a id="incremental___on_ext_reorg_roi_g2_0_15_ipsc_ext_reorg_roi_g2_54_126_"></a>
 #### incremental       @ on-ext_reorg_roi_g2_0_15/ipsc-ext_reorg_roi_g2_54_126/-->vita
