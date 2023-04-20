@@ -36,14 +36,6 @@
         - [on-ext_reorg_roi_g2_0_15       @ ipsc-ext_reorg_roi_g2_54_126/](#on_ext_reorg_roi_g2_0_15___ipsc_ext_reorg_roi_g2_54_126__)
             - [incremental       @ on-ext_reorg_roi_g2_0_15/ipsc-ext_reorg_roi_g2_54_126/](#incremental___on_ext_reorg_roi_g2_0_15_ipsc_ext_reorg_roi_g2_54_126_)
 - [ipsc-ext_reorg_roi_g2_54_126-retrain](#ipsc_ext_reorg_roi_g2_54_126_retrai_n_)
-- [db3_2_to_17_except_6](#db3_2_to_17_except_6_)
-    - [r50       @ db3_2_to_17_except_6](#r50___db3_2_to_17_except_6_)
-        - [coco       @ r50/db3_2_to_17_except_6](#coco___r50_db3_2_to_17_except_6_)
-        - [on-september_5_2020       @ r50/db3_2_to_17_except_6](#on_september_5_2020___r50_db3_2_to_17_except_6_)
-        - [on-part1       @ r50/db3_2_to_17_except_6](#on_part1___r50_db3_2_to_17_except_6_)
-    - [r101       @ db3_2_to_17_except_6](#r101___db3_2_to_17_except_6_)
-        - [coco       @ r101/db3_2_to_17_except_6](#coco___r101_db3_2_to_17_except_6_)
-        - [on-september_5_2020       @ r101/db3_2_to_17_except_6](#on_september_5_2020___r101_db3_2_to_17_except_6_)
 
 <!-- /MarkdownTOC -->
 
@@ -197,38 +189,40 @@ python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ex
 <a id="on_ext_reorg_roi_g2_0_53___ipsc_ext_reorg_roi_g2_54_126__"></a>
 ### on-ext_reorg_roi_g2_0_53       @ ipsc-ext_reorg_roi_g2_54_126/-->vita
 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_53
-__max_length-1__ 
+__-max_length-1-__ 
 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_53-max_length-1 OUT_SUFFIX max_length-1
-__max_length-2__ 
+__-max_length-2-__ 
 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_53-max_length-2 OUT_SUFFIX max_length-2
-__max_length-4__ 
+__-max_length-4-__ 
 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_53-max_length-4 OUT_SUFFIX max_length-4
-__max_length-8__ 
+__-max_length-8-__ 
 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_53-max_length-8 OUT_SUFFIX max_length-8
+__-max_length-19-__ 
+CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_53-max_length-19 OUT_SUFFIX max_length-19
 
 <a id="incremental___on_ext_reorg_roi_g2_0_53_ipsc_ext_reorg_roi_g2_54_126_"></a>
 #### incremental       @ on-ext_reorg_roi_g2_0_53/ipsc-ext_reorg_roi_g2_54_126/-->vita
 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_53-incremental OUT_SUFFIX incremental
 <a id="max_length_2___incremental_on_ext_reorg_roi_g2_0_53_ipsc_ext_reorg_roi_g2_54_126_"></a>
-__max_length-2__ 
+__-max_length-2__ 
 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_53-max_length-2-incremental OUT_SUFFIX max_length-2-incremental
 
 <a id="on_ext_reorg_roi_g2_0_15___ipsc_ext_reorg_roi_g2_54_126__"></a>
 ### on-ext_reorg_roi_g2_0_15       @ ipsc-ext_reorg_roi_g2_54_126/-->vita
 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15 OUT_SUFFIX g2_0_15
-__max_length-1__ 
+__-max_length-1__ 
 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-1 OUT_SUFFIX g2_0_15-max_length-1
-__max_length-2__ 
+__-max_length-2__ 
 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-2 OUT_SUFFIX g2_0_15-max_length-2
-__max_length-4__ 
+__-max_length-4__ 
 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-4 OUT_SUFFIX g2_0_15-max_length-4
-__max_length-8__ 
+__-max_length-8__ 
 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-8 OUT_SUFFIX g2_0_15-max_length-8
 
 <a id="incremental___on_ext_reorg_roi_g2_0_15_ipsc_ext_reorg_roi_g2_54_126_"></a>
 #### incremental       @ on-ext_reorg_roi_g2_0_15/ipsc-ext_reorg_roi_g2_54_126/-->vita
 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-incremental OUT_SUFFIX g2_0_15-incremental
-__max_length-2__ 
+__-max_length-2__ 
 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/vita-ipsc-ext_reorg_roi_g2_54_126_swin/model_0194999.pth TEST_NAME ytvis-ipsc-ext_reorg_roi_g2_0_15-max_length-2-incremental OUT_SUFFIX g2_0_15-max_length-2-incremental
 
 <a id="ipsc_ext_reorg_roi_g2_54_126_retrai_n_"></a>
@@ -237,33 +231,6 @@ CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vi
 sbatch cmd/vita-ipsc-ext_reorg_roi_g2_54_126_ytvis_swin-retrain.sh
 ```
 python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-ipsc-ext_reorg_roi_g2_54_126-vita_SWIN_bs8-retrain.yaml MODEL.WEIGHTS pretrained/vita_swin_coco.pth SOLVER.IMS_PER_BATCH 2
-<a id="db3_2_to_17_except_6_"></a>
-# db3_2_to_17_except_6
-<a id="r50___db3_2_to_17_except_6_"></a>
-## r50       @ db3_2_to_17_except_6-->vita
-<a id="coco___r50_db3_2_to_17_except_6_"></a>
-### coco       @ r50/db3_2_to_17_except_6-->vita
-python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-db3_2_to_17_except_6-R50_bs2.yaml MODEL.WEIGHTS pretrained/R50_coco.pth SOLVER.IMS_PER_BATCH 2
-
-<a id="on_september_5_2020___r50_db3_2_to_17_except_6_"></a>
-### on-september_5_2020       @ r50/db3_2_to_17_except_6-->vita
-PYTORCH_NO_CUDA_MEMORY_CACHING=1 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-db3_2_to_17_except_6-R50_bs2.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/db3_2_to_17_except_6-R50/model_0139999.pth
-
-<a id="on_part1___r50_db3_2_to_17_except_6_"></a>
-### on-part1       @ r50/db3_2_to_17_except_6-->vita
-PYTORCH_NO_CUDA_MEMORY_CACHING=1 CUDA_VISIBLE_DEVICES=0 python train_net_vita.py --config-file configs/ytvis19/vita-db3_2_to_17_except_6-R50_bs2.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/db3_2_to_17_except_6-R50/model_0139999.pth
-
-
-<a id="r101___db3_2_to_17_except_6_"></a>
-## r101       @ db3_2_to_17_except_6-->vita
-<a id="coco___r101_db3_2_to_17_except_6_"></a>
-### coco       @ r101/db3_2_to_17_except_6-->vita
-python train_net_vita.py --num-gpus 2 --config-file configs/ytvis19/vita-db3_2_to_17_except_6-R101_bs2.yaml MODEL.WEIGHTS pretrained/R101_coco.pth SOLVER.IMS_PER_BATCH 2
-
-<a id="on_september_5_2020___r101_db3_2_to_17_except_6_"></a>
-### on-september_5_2020       @ r101/db3_2_to_17_except_6-->vita
-PYTORCH_NO_CUDA_MEMORY_CACHING=1 CUDA_VISIBLE_DEVICES=1 python train_net_vita.py --config-file configs/ytvis19/vita-db3_2_to_17_except_6-R101_bs2.yaml --num-gpus 1 --eval-only MODEL.WEIGHTS log/db3_2_to_17_except_6-R101/model_0134999.pth
-
 
 
 
