@@ -137,17 +137,12 @@ python setup.py install
 change in `detectron2\layers\csrc\nms_rotated\nms_rotated_cuda.cu`
 ```
 /*
-<a id="ifdef_with_cud_a_"></a>
 #ifdef WITH_CUDA
-<a id="include_____box_iou_rotated_box_iou_rotated_utils_h_"></a>
 #include "../box_iou_rotated/box_iou_rotated_utils.h"
-<a id="endif_"></a>
 #endif
 // TODO avoid this when pytorch supports "same directory" hipification
-<a id="ifdef_with_hip_"></a>
 #ifdef WITH_HIP
 /\#include "box_iou_rotated/box_iou_rotated_utils.h"
-<a id="endif__1"></a>
 #endif
 */
 #include "box_iou_rotated/box_iou_rotated_utils.h"
@@ -231,12 +226,15 @@ scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc-ext_reorg_roi_g2_0_53_js
 scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/ipsc-ext_reorg_roi_g2_0_53-incremental_json_grs_230306_212406.zip ./
 
 
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/data_ipsc_well3_all_frames_roi_ytvis19_ipsc-ext_reorg_roi_g2_0_53-max_length-19_json_grs_230420_111810.zip ./
+scp -r -P 9738 abhineet@greyshark.cs.ualberta.ca:~/data_ipsc_well3_all_frames_roi_ytvis19_ipsc-ext_reorg_roi_g2_0_53_json_grs_230420_113836.zip ./
+
 
 <a id="nrw___sc_p_"></a>
 ## nrw       @ scp-->vita_setup
 scp -r asingh1@narval.computecanada.ca:~/scratch/vita_log/vita-ipsc-all_frames_roi_g2_0_38_swin/model_0059999.pth ./
 
-scp -r asingh1@narval.computecanada.ca:~/scratch/vita_log/vita-ipsc-ext_reorg_roi_g2_0_38_swin/model_0139999.pth ./
+scp -r asingh1@narval.computecanada.ca:~/scratch/vita_log/vita-ipsc-all_frames_roi_g2_0_38_swin/model_0059999.pth ./
 
 <a id="vita_ipsc_ext_reorg_roi_g2_16_53_swin___nrw_sc_p_"></a>
 ### vita-ipsc-ext_reorg_roi_g2_16_53_swin       @ nrw/scp-->vita_setup
